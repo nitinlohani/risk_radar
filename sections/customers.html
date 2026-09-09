@@ -1,0 +1,117 @@
+<div class="sec-tag">Core Workflow</div>
+                    <h2>Customers</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Customers</p>
+                    <p class="sec-intro">The single record of every party the platform knows — individuals and
+                        businesses alike. Every other module reads from and writes back to this record: a screening
+                        hit resolves against a customer here, a case investigates a customer here, and a filed STR
+                        names a customer here. This is where you look someone up and see their complete picture in
+                        one place.</p>
+
+                    <h3 id="s-c-1">Browsing and filtering customers</h3>
+                    <p>The main list covers every customer on the platform — often hundreds of thousands of records —
+                        so search and filtering are the primary way to work with it rather than scrolling.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-071.png" alt="Customers list with search bar and KYC Level filter"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure C.1 — The Customers list: name, Customer ID, KYC Level, and when each
+                            record was created.</figcaption>
+                    </figure>
+                    <p><strong>KYC Level</strong> reflects how much verification is on file for that customer —
+                        Basic covers standard identity checks, Advanced means enhanced due diligence has been
+                        completed (typically required for higher-risk customers). Filtering by this narrows the list
+                        to exactly the verification tier you're reviewing.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-072.png" alt="KYC Level filter dropdown showing All, Basic, Advanced"
+                            loading="lazy" width="1918" height="877">
+                        <figcaption>Figure C.2 — Filtering the list by KYC Level.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>Key features</h4>
+                        <ul class="check-list">
+                            <li>Search by customer name or Customer ID</li>
+                            <li>Filter by KYC Level — All, Basic, or Advanced</li>
+                            <li>Refresh to pull the latest records, or Hide Filters to collapse the filter bar</li>
+                            <li>Click any row to open that customer's full profile</li>
+                        </ul>
+                    </div>
+
+                    <h3 id="s-c-2">Customer Profile</h3>
+                    <p>Opening a customer shows their core identity at the top — name, Customer ID, type
+                        (Individual or Business), segment, risk tier, KYC level, status, country, onboarding date,
+                        and sanctions screening result — plus declared monthly spend, source of funds, and linked
+                        accounts. Clicking <strong>More</strong> expands this into the complete KYC record: full
+                        Profile, Risk & Compliance (including PEP flag), Location, Business & Employment, and
+                        Financial Information.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-073.png" alt="Customer Profile expanded with full KYC detail sections"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure C.3 — The full profile, expanded via More — everything on file for this
+                            customer in one view.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Click <strong>More</strong> to see the complete KYC record; click <strong>Less</strong>
+                                to collapse it back to the summary header</li>
+                            <li>Check <strong>PEP Flag</strong> and <strong>Risk Tier</strong> first when assessing
+                                why a customer needs closer attention</li>
+                            <li>Linked <strong>Accounts</strong> are listed just below the header, with their own
+                                active/inactive status</li>
+                        </ul>
+                    </div>
+
+                    <h3 id="s-c-3">Analytics, Transactions, and history tabs</h3>
+                    <p>Below the profile header, five tabs cover everything that's happened with this customer.
+                        <strong>Analytics</strong> is the default view — incoming versus outgoing activity, top
+                        counterparties, and transaction type breakdown, over a 1-day, 7-day, or 30-day window (with
+                        an optional Alert Window toggle to focus on activity around a specific alert).</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-074.png" alt="Customer Profile Analytics tab with time window toggle"
+                            loading="lazy" width="1918" height="870">
+                        <figcaption>Figure C.4 — Analytics: incoming/outgoing activity and counterparty breakdown.</figcaption>
+                    </figure>
+                    <p><strong>Transactions</strong> lists every transaction tied to this customer, with filters for
+                        type, channel, price range, date, and sender/receiver ID — exportable as CSV for offline
+                        review.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-075.png" alt="Customer Profile Transactions tab with Export CSV"
+                            loading="lazy" width="1918" height="868">
+                        <figcaption>Figure C.5 — Transactions: the full filtered list, with a one-click CSV
+                            export.</figcaption>
+                    </figure>
+                    <p><strong>Prior Cases / Alerts</strong> shows this customer's investigation history — every
+                        case and alert ever raised against them, so you can see at a glance whether this is a
+                        first-time hit or a repeat pattern.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-076.png" alt="Customer Profile Prior Cases / Alerts tab"
+                            loading="lazy" width="1918" height="870">
+                        <figcaption>Figure C.6 — Prior Cases / Alerts: this customer's investigation history, filterable
+                            by status and date.</figcaption>
+                    </figure>
+                    <p><strong>Screening History</strong> lists every name-screening run this customer has been
+                        through — Delta (ongoing re-checks as watchlists update) and Batch (scheduled bulk
+                        re-screens) both appear here, each with its resulting alert score.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-077.png" alt="Customer Profile Screening History tab with Screening Period filter"
+                            loading="lazy" width="1918" height="871">
+                        <figcaption>Figure C.7 — Screening History: every screening run, with type and alert
+                            outcome.</figcaption>
+                    </figure>
+                    <p><strong>STR History</strong> lists any Suspicious Transaction Reports filed naming this
+                        customer, filterable by who filed it and when — an empty state here is common and simply
+                        means no STR has ever named this customer.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-078.png" alt="Customer Profile STR History tab with Created By filter"
+                            loading="lazy" width="1918" height="877">
+                        <figcaption>Figure C.8 — STR History: filed reports naming this customer, if any.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Switch between the 5 tabs — Analytics, Transactions, Prior Cases / Alerts, Screening
+                                History, STR History — to view a different slice of this customer's activity</li>
+                            <li>Use each tab's own filters (date range, status, assignee) to narrow what's shown</li>
+                            <li>An empty state (e.g. "No prior cases," "Oops! No data available") means nothing
+                                exists yet for that view — not an error</li>
+                        </ul>
+                    </div>

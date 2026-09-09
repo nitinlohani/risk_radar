@@ -1,0 +1,177 @@
+<div class="sec-tag">Core Workflow</div>
+                    <h2>STR Listing</h2>
+                    <p class="nav-crumb"><span>Navigation</span> FT AML → STR Listing</p>
+                    <p class="sec-intro">The register of every Suspicious Transaction Report the institution has filed.
+                        Where Case Manager shows the investigation, STR Listing shows the regulatory output of that
+                        investigation — one row per filing.</p>
+                    <h3 id="s-4-1">What It Tracks</h3>
+                    <p>Each row represents one case that has produced an STR, linking the case back to the STR
+                        reference, who raised it, and the transaction subjects and amount involved — giving the MLRO a
+                        single register of everything that has been reported, without needing to reopen each case
+                        individually.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Search by Case Title, Case ID, or STR ID</li>
+                            <li>Use Show Filters to narrow the list further</li>
+                            <li>Click Download CSV on any row to export that filing's details</li>
+                            <li>Click a row to jump back into the originating case</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-018.png" width="1918" height="871"
+                            alt="Figure 4.1 — STR Listing" loading="lazy">
+                        <figcaption>Figure 4.1 — STR Listing: the register of every filed STR, searchable by Case Title, Case ID, or STR ID.</figcaption>
+                    </figure>
+                    <p><strong>How an STR gets filed, end to end:</strong> STR Listing is a read-only register — there
+                        is no separate "create STR" form to fill in here. A filing is always the output of a case that
+                        has already been investigated in Case Manager, produced through a guided, GoTRACS-compliant
+                        filing wizard. The full process runs as follows:</p>
+                    <ul class="check-list">
+                        <li><strong>Investigate the case</strong> — an analyst reviews the alert(s) behind the case, as
+                            described in <a href="#s-2-1">Case Queues → View Case</a>, and documents findings that
+                            support their conclusion</li>
+                        <li><strong>Reach a True Match disposition</strong> — when the evidence supports suspicious
+                            activity, the analyst sets the case disposition to <strong>True Match</strong> and selects
+                            <strong>Escalate for SAR/STR</strong>, rather than closing it as a False Match, per <a
+                                href="#s-2-2">Case Lifecycle</a>, which launches the STR filing wizard</li>
+                    </ul>
+                    <p>The wizard itself runs across six steps:</p>
+                    <ul class="check-list">
+                        <li><strong>Step 1 — Select Alerts</strong> — choose which of the case's alerts the filing should
+                            cover; the transactions and subject parties from the selected alerts carry through
+                            automatically to later steps</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-019.png" width="1918" height="886"
+                            alt="Figure 4.2 — STR Filing, Select Alerts" loading="lazy">
+                        <figcaption>Figure 4.2 — STR filing wizard, Step 1: selecting which alerts the STR should cover.</figcaption>
+                    </figure>
+                    
+                    <ul class="check-list">
+                        <li><strong>Step 2 — Report Type</strong> — choose the STR Type (e.g. STRR Regular, STRHP High
+                            Priority, STRBR Bulk Report, STRA Per Account, STRHU Highly Unusual), confirm the
+                            auto-filled Institution code and Supervising agency, and set the Submission type and STR
+                            trigger (e.g. KYC Docs requested by AMLC Referrals) and Date of determination</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-020.png" width="1918" height="876"
+                            alt="Figure 4.3 — STR Filing, Report Type" loading="lazy">
+                        <figcaption>Figure 4.3 — STR filing wizard, Step 2: STR Type, institution code, supervising agency, and trigger.</figcaption>
+                    </figure>
+                    
+                    <ul class="check-list">
+                        <li><strong>Step 3 — Reason for Suspicion</strong> — select one or more Suspicious Circumstance codes
+                            (SC1–SC6) that best describe why the activity is suspicious, plus any Additional Reason
+                            Codes needed beyond the primary selection</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-021.png" width="1918" height="877"
+                            alt="Figure 4.4 — STR Filing, Reason for Suspicion" loading="lazy">
+                        <figcaption>Figure 4.4 — STR filing wizard, Step 3: selecting suspicious circumstance and additional reason codes.</figcaption>
+                    </figure>
+                    
+                    <ul class="check-list">
+                        <li><strong>Step 4 — Transaction</strong> — review the suspicious transactions triggered by the
+                            selected alerts, all included by default; deselect any that should be excluded from the
+                            filing, and optionally narrow by Type or Period From/To. The total amount across selected
+                            transactions is shown live</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-022.png" width="1918" height="885"
+                            alt="Figure 4.5 — STR Filing, Transaction" loading="lazy">
+                        <figcaption>Figure 4.5 — STR filing wizard, Step 4: reviewing and selecting the suspicious transactions to include.</figcaption>
+                    </figure>
+                    
+                    <ul class="check-list">
+                        <li><strong>Step 5 — Subject Parties</strong> — review the parties auto-derived from the selected
+                            transactions (sender and receiver); click a party to expand and confirm or edit their
+                            identity details — Party role, Entity type, name fields, CRN/account number, ID type and
+                            number, and date of birth</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-023.png" width="1918" height="883"
+                            alt="Figure 4.6 — STR Filing, Subject Parties" loading="lazy">
+                        <figcaption>Figure 4.6 — STR filing wizard, Step 5: confirming subject party identity details.</figcaption>
+                    </figure>
+                    
+                    <ul class="check-list">
+                        <li><strong>Step 6 — Narratives</strong> — write the STR Narrative explaining the basis for suspicion
+                            in the analyst's own words; a live character counter confirms the entry meets the
+                            regulator's recommended length, and the alert(s) covered by the filing are listed for
+                            reference before submission</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-024.png" width="1918" height="889"
+                            alt="Figure 4.7 — STR Filing, Narratives" loading="lazy">
+                        <figcaption>Figure 4.7 — STR filing wizard, Step 6: writing the STR narrative before submission.</figcaption>
+                    </figure>
+                    
+                    <ul class="check-list">
+                        <li><strong>MLRO review and approval</strong> — once submitted, the draft routes to the
+                            Compliance Officer / MLRO, the only role with sign-off authority on a filing (see <a
+                                href="#s-1-4">Roles &amp; Access</a>); they review the evidence and either approve it
+                            or send it back to the analyst for further work</li>
+                        <li><strong>Filing is recorded</strong> — once approved, the filing appears as a new row in STR
+                            Listing with its own STR ID, and the originating case's Status updates to reflect that a
+                            report has been created against it</li>
+                        <li><strong>Submit to the regulator</strong> — the approved filing is submitted to the relevant
+                            Financial Intelligence Unit (FIU) through the institution's regulatory reporting channel;
+                            Download CSV exports the filing's underlying transaction and subject detail to support that
+                            submission and for internal record-keeping</li>
+                        <li><strong>Retained for audit</strong> — the filing, its supporting case file, and every
+                            action taken along the way remain permanently linked and retrievable, satisfying the
+                            record-keeping obligations that apply to filed reports</li>
+                    </ul>
+                    <div class="note-box"><span class="box-label">Note</span>Because every filing traces back to a
+                        specific case, STR Listing should be treated as a reporting and audit register rather than a
+                        workspace — any correction or follow-up investigation happens by reopening the case itself in
+                        Case Manager, not by editing the STR row directly.</div>
+                    <h3 id="s-4-2">STR Listing Columns</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Case Title / ID</td>
+                                    <td>The customer or subject name and the case that produced this STR</td>
+                                </tr>
+                                <tr>
+                                    <td>STR ID</td>
+                                    <td>A sequential internal reference number for the filing</td>
+                                </tr>
+                                <tr>
+                                    <td>Created At</td>
+                                    <td>Date and time the STR was generated</td>
+                                </tr>
+                                <tr>
+                                    <td>Created By</td>
+                                    <td>The analyst or MLRO who raised the filing</td>
+                                </tr>
+                                <tr>
+                                    <td>Subjects</td>
+                                    <td>Every individual or entity named in the STR — a filing can name more than one
+                                        subject if a case involves linked parties</td>
+                                </tr>
+                                <tr>
+                                    <td>Amount</td>
+                                    <td>The cumulative transaction value associated with the filing</td>
+                                </tr>
+                                <tr>
+                                    <td>Download CSV</td>
+                                    <td>Exports the filing's underlying transaction and subject detail for submission or
+                                        record-keeping</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>A single STR listing three subjects and an amount of ₹747,569.31 tells the MLRO, at a glance,
+                            that this was a multi-party case — worth opening before smaller single-subject filings when
+                            prioritizing a regulator review.</p>
+                    </div>

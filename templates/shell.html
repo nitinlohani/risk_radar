@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT AML — Platform Guide</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="scrollProgress" class="scroll-progress"></div>
+    <a id="top"></a>
+    <a href="#modules" class="skip-link">Skip to modules</a>
+
+    <nav class="nav">
+        <div class="nav-brand"><img
+                src="images/screenshot-000.png"
+                alt="FyscalTech" style="height:26px; width:auto;"></div>
+        <div class="nav-links">
+            <a href="#capabilities">Platform</a>
+            <a href="#modules">Modules</a>
+            <a href="#quickstart">Quick Start</a>
+            <a href="#updates">Releases</a>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-search-pill" data-cmdk-trigger type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <span>Search</span>
+                <kbd class="nav-search-kbd">/</kbd>
+            </button>
+            <button class="nav-ai-pill" data-ai-trigger type="button">Ask AI <span
+                    class="ai-spark">&#10022;</span></button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-eyebrow"><span class="live-dot"></span> Welcome to FT AML</span>
+            <h1>The complete <br><span class="accent">Anti-Money Laundering</span> platform, end to end.</h1>
+            <p class="hero-lead">Screen customers, monitor transactions, triage alerts, and manage investigations — all
+                in one platform built for compliance teams who can't afford to miss a signal.</p>
+            <div class="hero-cta-row">
+                <a class="btn btn-primary" href="#quickstart">Getting Started →</a>
+                <a class="btn btn-ghost" href="#modules">Explore Modules</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">{{MODULE_COUNT}}</div>
+                    <div class="label">Platform modules</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">24/7</div>
+                    <div class="label">Transaction monitoring</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">&lt;2min</div>
+                    <div class="label">Avg. alert-to-triage</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-illustration">
+
+            <div class="live-feed-mock">
+                <span class="lf-dot"></span>
+                <span>Screening <b>2,481</b> entities · <span class="lf-ok">live</span></span>
+            </div>
+
+            <svg viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- ambient grid dots -->
+                <g opacity="0.25">
+                    <circle cx="30" cy="30" r="1.6" fill="#352eff" />
+                    <circle cx="70" cy="30" r="1.6" fill="#352eff" />
+                    <circle cx="110" cy="30" r="1.6" fill="#352eff" />
+                    <circle cx="30" cy="70" r="1.6" fill="#352eff" />
+                    <circle cx="470" cy="380" r="1.6" fill="#352eff" />
+                    <circle cx="440" cy="390" r="1.6" fill="#352eff" />
+                </g>
+                <!-- network edges -->
+                <line class="network-edge" x1="90" y1="120" x2="200" y2="90" stroke="#C7C9E8" stroke-width="2" />
+                <line class="network-edge" x1="200" y1="90" x2="320" y2="140" stroke="#C7C9E8" stroke-width="2" />
+                <line class="network-edge" x1="200" y1="90" x2="180" y2="220" stroke="#C7C9E8" stroke-width="2" />
+                <line class="network-edge" x1="320" y1="140" x2="300" y2="260" stroke="#ff8400" stroke-width="2" />
+                <line class="network-edge" x1="180" y1="220" x2="300" y2="260" stroke="#C7C9E8" stroke-width="2" />
+                <line class="network-edge" x1="90" y1="120" x2="120" y2="260" stroke="#C7C9E8" stroke-width="2" />
+                <line class="network-edge" x1="120" y1="260" x2="180" y2="220" stroke="#C7C9E8" stroke-width="2" />
+                <line class="network-edge" x1="300" y1="260" x2="330" y2="330" stroke="#ff8400" stroke-width="2"
+                    stroke-dasharray="4 5" />
+
+                <!-- normal nodes -->
+                <circle cx="90" cy="120" r="8" fill="#352eff" />
+                <circle cx="200" cy="90" r="9" fill="#7c9dff" />
+                <circle cx="180" cy="220" r="7" fill="#352eff" />
+                <circle cx="120" cy="260" r="6" fill="#7c9dff" />
+                <circle cx="320" cy="140" r="7" fill="#ff00ff" />
+
+                <!-- flagged node (pulsing) -->
+                <circle class="network-flagged" cx="300" cy="260" r="7" fill="#ff8400" />
+                <circle cx="300" cy="260" r="3" fill="#fff" />
+            </svg>
+
+
+            <div class="case-card-mock">
+                <span class="cc-tag">Flagged</span>
+                <div class="cc-title">CASE-2026-0004417</div>
+                <div class="cc-sub">High-value transfer &middot; 3 alerts linked</div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="trust-row">
+        <div class="trust-item">
+            <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                    stroke-width="1.8">
+                    <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" />
+                </svg></div>
+            <div>
+                <h4>Built for regulators</h4>
+                <p>Every action is timestamped and attributed, audit-ready by default.</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                    stroke-width="1.8" stroke-linecap="round">
+                    <path d="M3 12h4l2-7 4 14 2-7h6" />
+                </svg></div>
+            <div>
+                <h4>Real-time detection</h4>
+                <p>Transactions are evaluated against your rules the moment they happen.</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                    stroke-width="1.8" stroke-linejoin="round">
+                    <path d="M12 3l9 5-9 5-9-5z" />
+                    <path d="M3 13l9 5 9-5" />
+                </svg></div>
+            <div>
+                <h4>One platform, full lifecycle</h4>
+                <p>From screening to STR filing, without switching tools.</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                    stroke-width="1.8">
+                    <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" />
+                </svg></div>
+            <div>
+                <h4>Configurable by design</h4>
+                <p>Weightages, severity bands, and rules tuned to your own risk policy.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="capabilities">
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">Why choose FT AML</span>
+                <h2>What FT AML actually does</h2>
+                <p class="section-sub">A single platform covering the full anti-money-laundering lifecycle, not a
+                    patchwork of point tools.</p>
+            </div>
+        </div>
+        <div class="capability-grid">
+            <div class="capability-card">
+                <div class="cap-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" />
+                        <path d="M8.5 12l2.3 2.3L15.5 9" />
+                    </svg></div>
+                <h3>Screen with confidence</h3>
+                <p>Match customers against sanctions, PEP, and adverse media lists with configurable, explainable
+                    scoring — Watchlist Search for ad-hoc lookups, Batch and Delta Screening for ongoing coverage.</p>
+            </div>
+            <div class="capability-card">
+                <div class="cap-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2.5 12h4l2-7 4 14 2-9 1.5 4h5.5" />
+                    </svg></div>
+                <h3>Monitor every transaction</h3>
+                <p>Detect structuring, unusual transfers, and rapid movement with typologies and variables you build,
+                    test in Shadow mode, and publish yourself.</p>
+            </div>
+            <div class="capability-card">
+                <div class="cap-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="10.5" cy="10.5" r="6.5" />
+                        <path d="M19.5 19.5l-4.3-4.3" />
+                    </svg></div>
+                <h3>Investigate, don't just detect</h3>
+                <p>Every alert has a clear path to a case, a disposition, and — where needed — a filed STR, with the
+                    full lifecycle timestamped for audit.</p>
+            </div>
+            <div class="capability-card">
+                <div class="cap-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 5h18M3 5l7 8v6l4 2v-8l7-8" />
+                    </svg></div>
+                <h3>Triage without the noise</h3>
+                <p>My Queue, All Alerts, and Admin View give analysts, supervisors, and MLROs exactly the visibility
+                    their role needs — nothing more.</p>
+            </div>
+            <div class="capability-card">
+                <div class="cap-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4.5A1.5 1.5 0 0 1 5.5 3h13A1.5 1.5 0 0 1 20 4.5V17a1.5 1.5 0 0 1-1.5 1.5h-11L4 21z" />
+                        <path d="M8 9h8M8 12.5h8M8 16h4.5" />
+                    </svg></div>
+                <h3>One case, one audit trail</h3>
+                <p>Alert Triggered → Investigator Review → Findings Documented → Disposition → MLRO Approval → Audit
+                    Record — the same lifecycle, every time.</p>
+            </div>
+            <div class="capability-card">
+                <div class="cap-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M6 6l2.1 2.1M15.9 15.9L18 18M18 6l-2.1 2.1M8.1 15.9L6 18" />
+                        <circle cx="12" cy="12" r="4.2" />
+                    </svg></div>
+                <h3>Let AI draft the first pass</h3>
+                <p>AI Manager pre-assembles screening history, transaction patterns, and prior cases into a draft
+                    summary — the analyst still makes the call.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="modules">
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">Platform Modules</span>
+                <h2>Every module, one dashboard</h2>
+                <!-- <p class="section-sub">Click into any module for complete, step-by-step documentation below.</p> -->
+            </div>
+        </div>
+        {{MOD_GRID}}
+    </section>
+
+    <section class="section" id="quickstart">
+        <div class="quickstart">
+            <div>
+                <span class="hero-eyebrow" style="background:rgba(255,255,255,0.1); color:#fff;">Quick Start</span>
+                <h2>Up and running in four steps</h2>
+                <p>No install, no setup wizard — just log in and start where your team already works.</p>
+                <a class="btn btn-primary" href="#modules">Explore the platform →</a>
+            </div>
+            <div class="qs-steps">
+                <div class="qs-step">
+                    <div class="qs-num">01</div>
+                    <div>
+                        <h4>Log in</h4>
+                        <p>Your platform URL, your credentials, verified with an OTP step.</p>
+                    </div>
+                </div>
+                <div class="qs-step">
+                    <div class="qs-num">02</div>
+                    <div>
+                        <h4>Land on your Dashboard</h4>
+                        <p>Everything you need is one click away in the sidebar.</p>
+                    </div>
+                </div>
+                <div class="qs-step">
+                    <div class="qs-num">03</div>
+                    <div>
+                        <h4>Screen or monitor</h4>
+                        <p>Run a screening check or watch alerts arrive from active rules.</p>
+                    </div>
+                </div>
+                <div class="qs-step">
+                    <div class="qs-num">04</div>
+                    <div>
+                        <h4>Investigate and resolve</h4>
+                        <p>Turn a confirmed hit into a case, and close it with a clear disposition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{RELEASE_TEASER}}
+
+    <!-- ================= Full documentation (hidden until a module is opened) ================= -->
+    <div class="docs-shell" id="docsShell" hidden>
+        <section class="section" id="documentation" style="padding-top:0;">
+            <div class="section-head">
+                <div>
+                    <span class="section-eyebrow">Documentation</span>
+                    <h2>The complete User Guide</h2>
+                    <p class="section-sub">Every module above, documented step by step.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <div class="layout">
+            {{SIDEBAR}}
+            <button class="sidebar-collapse-arrow" id="toggleSidebarBtn" type="button"
+                title="Collapse sidebar" aria-label="Collapse sidebar" aria-pressed="false">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M12.5 4.5L6 10l6.5 5.5" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <main class="content" id="mainContent">
+                <div class="content-topbar" id="contentTopbar">
+                    <nav class="breadcrumb-trail" id="breadcrumbTrail" aria-label="Breadcrumb">
+                        <span>Documentation</span><span class="bc-sep">/</span><span class="bc-current"
+                            id="breadcrumbCurrent">Getting Started</span>
+                    </nav>
+                    <div class="content-topbar-actions">
+                        <button class="btn-back-modules" id="backToModulesBtn" type="button" title="Back to modules"
+                            aria-label="Back to modules">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5 8h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                            </svg>
+                            <span>Modules</span>
+                        </button>
+                        <button class="btn-copy-page" id="copyPageBtn" type="button" title="Copy page link"
+                            aria-label="Copy page link">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <rect x="8" y="8" width="12" height="12" rx="2" />
+                                <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+                            </svg>
+                            <span class="cp-label">Copy Page</span>
+                        </button>
+                    </div>
+                </div>
+                {{DOC_SECTION_PLACEHOLDERS}}
+            </main>
+            <aside class="page-toc" id="pageToc">
+                <div class="side-title">On this page</div>
+                <div class="toc-list" id="tocList">
+                    <div class="toc-empty">Nothing open yet</div>
+                </div>
+            </aside>
+        </div>
+    </div><!-- /#docsShell -->
+
+    <footer>
+        <div class="foot-inner">
+            <div class="foot-top">
+                <div class="foot-brand"><img
+                        src="images/screenshot-045.png"
+                        alt="FyscalTech"><span></span></div>
+            </div>
+            <div id="google_translate_element"></div>
+            <div class="foot-bottom">
+                <div class="footer-selectors">
+                    <div class="lang-control" id="langControl" role="button" tabindex="0" aria-haspopup="listbox"
+                        aria-expanded="false" title="Translate this page — powered by Google Translate">
+                        <img class="lang-flag" id="langFlag" src="https://flagcdn.com/24x18/us.png" width="18"
+                            height="13" alt="">
+                        <span class="lang-text" id="langText">English (United States)</span>
+                        <span class="lang-caret">&#9650;</span>
+                        <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Choose a language"></ul>
+                    </div>
+                </div>
+                <span>© 2026 Fyscal Technologies PTE LTD. All rights reserved.</span>
+                <span><a href="https://www.fyscaltech.com/">fyscaltech.com</a> &nbsp;·&nbsp; <a
+                        href="https://www.fyscaltech.com/privacy-policy/">Privacy Policy</a> &nbsp;·&nbsp; <a
+                        href="https://www.fyscaltech.com/terms-of-use/">Terms of Use</a> &nbsp;·&nbsp; <a
+                        href="https://www.fyscaltech.com/contact/">Contact</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+    <div class="lightbox" id="lightbox"><span class="lightbox-close" id="lightboxClose">&#10005;</span><img
+            id="lightboxImg" src="" alt=""></div>
+
+    <div class="cmdk-overlay" id="cmdkOverlay">
+        <div class="cmdk-box" role="dialog" aria-modal="true" aria-label="Search documentation">
+            <input id="cmdkInput" class="cmdk-input" type="text" placeholder="Search modules and documentation…"
+                aria-label="Search">
+            <div id="cmdkResults" class="cmdk-results"></div>
+        </div>
+    </div>
+
+    <div class="ai-overlay" id="aiOverlay">
+        <div class="ai-box" role="dialog" aria-modal="true" aria-label="Ask AI about this documentation">
+            <div class="ai-header">
+                <span>&#10024; Ask AI</span>
+                <button class="ai-close" id="aiClose" aria-label="Close">&#10005;</button>
+            </div>
+            <div class="ai-messages" id="aiMessages">
+                <div class="ai-msg bot">Hi! I can point you to the right section of this guide — try asking about a
+                    module, like <em>"how does name screening work"</em> or <em>"case lifecycle"</em>.</div>
+            </div>
+            <div class="ai-suggested">
+                <button data-ai-suggest="What is transaction monitoring?">Transaction monitoring</button>
+                <button data-ai-suggest="How do I create a case?">Create a case</button>
+                <button data-ai-suggest="What is an STR?">What is an STR?</button>
+            </div>
+            <div class="ai-input-row">
+                <input id="aiInput" class="ai-input" type="text" placeholder="Ask about the FT AML platform…"
+                    aria-label="Ask AI">
+                <button class="ai-send" id="aiSend" type="button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js" defer></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+{{SECTION_TEMPLATES}}
+</body>
+
+</html>

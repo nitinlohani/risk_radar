@@ -1,0 +1,15 @@
+[
+  { "id": "getting-started", "title": "Getting Started", "category": "Get Started", "icon": "dashboard" },
+  { "id": "case-manager", "title": "Case Manager", "category": "Core Workflow", "icon": "case" },
+  { "id": "alert-manager", "title": "Alert Manager", "category": "Core Workflow", "icon": "alert" },
+  { "id": "customers", "title": "Customers", "category": "Core Workflow", "icon": "customer" },
+  { "id": "str-listing", "title": "STR Listing", "category": "Core Workflow", "icon": "report" },
+  { "id": "ai-manager", "title": "AI Manager", "category": "AI & Screening", "icon": "ai" },
+  { "id": "name-screening", "title": "Name Screening", "category": "AI & Screening", "icon": "screening" },
+  { "id": "automation", "title": "Automation", "category": "AI & Screening", "icon": "automation" },
+  { "id": "transaction-monitoring", "title": "Transaction Monitoring", "category": "Monitoring & Data", "icon": "monitoring" },
+  { "id": "data-ingestion", "title": "Data Ingestion", "category": "Monitoring & Data", "icon": "ingestion" },
+  { "id": "admin", "title": "Admin", "category": "Administration", "icon": "rules" },
+  { "id": "faq", "title": "Help &amp; Reference", "category": "Reference & Support", "icon": "faq" },
+  { "id": "release-notes", "title": "Release Notes", "category": "Reference & Support", "icon": "report" }
+]

@@ -1,0 +1,464 @@
+<div class="sec-tag">Core Workflow</div>
+                    <h2>Case Manager</h2>
+                    <p class="nav-crumb"><span>Navigation</span> FT AML → Case Manager</p>
+                    <p class="sec-intro">The workspace where every investigation lives. When an alert from Name
+                        Screening or Transaction Monitoring needs a human look, it becomes a case here — either
+                        automatically, per the rules set in <a href="#automation">Automation → Case Creation</a>, or
+                        manually — and every action taken on it, from first review to final sign-off, is recorded
+                        for audit.</p>
+                    <h3 id="s-2-1">Case Queues</h3>
+                    
+                    <p>Cases are organized into three views, switchable from tabs at the top of the screen:</p>
+                    <ul class="check-list">
+                        <li><strong>My Queue</strong> — only the cases assigned to the logged-in analyst, so
+                            investigators see just their own workload</li>
+                        <li><strong>All Cases</strong> — every case across the institution, for supervisors and MLROs
+                            who need full visibility</li>
+                        <li><strong>Admin View</strong> — an administrative view across all analysts' queues, showing
+                            case counts by status (Unassigned, Escalated, Pending Approval) alongside Active Agents
+                            data, so supervisors can rebalance workload or check coverage</li>
+                    </ul>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Search by Case Title, Case ID, or Customer Name using the search bar</li>
+                            <li>Filter by Status, Creation Period, Age Period, or Assignee</li>
+                            <li>Click Refresh to pull the latest case data, or Hide/Show Filters to collapse the filter
+                                bar</li>
+                            <li>Click any row to open the full case file with alert history, findings, and audit trail
+                            </li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-003.png" width="1918" height="877"
+                            alt="Figure 2.1 — Case Manager, My Queue" loading="lazy">
+                        <figcaption>Figure 2.1 — Case Manager, My Queue: cases assigned to the logged-in analyst.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-004.png" width="1918" height="873"
+                            alt="Figure 2.2 — Case Manager, All Cases" loading="lazy">
+                        <figcaption>Figure 2.2 — Case Manager, All Cases</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-005.png" width="1857" height="847"
+                            alt="Figure 2.3 — Case Manager, Admin View" loading="lazy">
+                        <figcaption>Figure 2.3 — Case Manager, Admin View</figcaption>
+                    </figure>
+                    <p><strong>View Case</strong> — clicking a row opens the case's dedicated detail screen rather
+                        than a simple pop-up. From here an analyst can:</p>
+                    <ul class="check-list">
+                        <li>Review the underlying alert(s) that triggered the case, including the screening or
+                            transaction detail behind each one</li>
+                        <li>See the customer's full profile alongside prior cases and screening history for context</li>
+                        <li>Add investigation notes and attach supporting documents to build the evidence trail</li>
+                        <li>Record findings and move the case through disposition — False Match, escalate as a True
+                            Match, or Request Info — as covered in <a href="#s-2-2">Case Lifecycle</a></li>
+                        <li>View the complete audit trail of every status change, note, and user action logged against
+                            the case</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-006.png" width="1918" height="849"
+                            alt="Figure 2.4 — Case Details" loading="lazy">
+                        <figcaption>Figure 2.4 — Case Details: the View Case screen, with customer profile, alert strip, and detail tabs.</figcaption>
+                    </figure>
+                    <p><strong>Add Alerts</strong> — a case can grow to cover more than the alert(s) it opened
+                        with. Clicking Add Alerts on the case detail screen lets an analyst merge other ungrouped
+                        alerts on the same subject into the current case, rather than investigating each one
+                        separately:</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>From the case detail screen, click Add Alerts</li>
+                            <li>Search the list of ungrouped alerts (e.g. by entity name) to find related alerts</li>
+                            <li>Select one or more alerts to merge into the case</li>
+                            <li>Click Add Alerts to confirm — the selected alerts now appear in the case's alert
+                                strip and count toward its Alerts total</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-007.png" width="1918" height="811"
+                            alt="Figure 2.5 — Add Alerts to Case" loading="lazy">
+                        <figcaption>Figure 2.5 — Add Alerts to Case: merging additional ungrouped alerts on the same subject into an open case.</figcaption>
+                    </figure>
+                    <p><strong>Case detail tabs</strong> — below the customer profile, the case detail screen organizes
+                        supporting evidence into four tabs:</p>
+                    <ul class="check-list">
+                        <li><strong>Analytics</strong> — incoming/outgoing transaction summaries (Total, Average,
+                            Max) over a selectable window (1D/7D/30D or the alert window), plus Top Counterparties by
+                            Amount and a breakdown by Transaction Type</li>
+                        <li><strong>Transactions</strong> — the customer's full transaction history, filterable by
+                            Type, Channel, Price range, Date range, Sender ID, or Receiver ID, with a Triggered Txns
+                            toggle to isolate only the transactions that triggered an alert, and an Export CSV option
+                        </li>
+                        <li><strong>Other Cases / Alerts</strong> — every other case and alert on file for the same
+                            customer, split into Cases and Alerts sub-tabs, so an analyst can spot a pattern of prior
+                            activity before deciding on disposition</li>
+                        <li><strong>Rule Analysis</strong> — for alerts raised by Transaction Monitoring, shows which
+                            rule fired and why; expanding a condition reveals the underlying variable (aggregation
+                            function, time window, and group-by field) and the actual value that breached the
+                            threshold</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-008.png" width="1918" height="871"
+                            alt="Figure 2.6 — Case Details, Analytics" loading="lazy">
+                        <figcaption>Figure 2.6 — Case Details, Analytics tab: incoming/outgoing summary, top counterparties, and transaction types.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-009.png" width="1918" height="873"
+                            alt="Figure 2.7 — Case Details, Transactions" loading="lazy">
+                        <figcaption>Figure 2.7 — Case Details, Transactions tab: full transaction history with filters and CSV export.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-010.png" width="1918" height="873"
+                            alt="Figure 2.8 — Case Details, Other Cases / Alerts (Alerts)" loading="lazy">
+                        <figcaption>Figure 2.8 — Case Details, Other Cases / Alerts tab, Alerts sub-tab: other open alerts on the same customer.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-011.png" width="1918" height="870"
+                            alt="Figure 2.9 — Case Details, Other Cases / Alerts (Cases)" loading="lazy">
+                        <figcaption>Figure 2.9 — Case Details, Other Cases / Alerts tab, Cases sub-tab: other cases on the same customer.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-012.png" width="1918" height="876"
+                            alt="Figure 2.10 — Case Details, Rule Analysis" loading="lazy">
+                        <figcaption>Figure 2.10 — Case Details, Rule Analysis tab: the rule and conditions that triggered the alert.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-013.png" width="1918" height="873"
+                            alt="Figure 2.11 — Case Details, Rule Analysis (expanded)" loading="lazy">
+                        <figcaption>Figure 2.11 — Case Details, Rule Analysis tab, expanded: the underlying variable definition behind a breached condition.</figcaption>
+                    </figure>
+                    
+
+                    
+
+                    <h3 id="s-2-2">Case Lifecycle</h3>
+                    <p>Every case moves through the same stages, regardless of which module generated the underlying
+                        alert:</p>
+                    <p><strong>Alert Triggered → Investigator Review → Findings Documented → Disposition (False Positive
+                            / Escalate for SAR-STR / Request Info) → MLRO Approval → Audit Record</strong></p>
+                    <ul class="check-list">
+                        <li><strong>Alert Triggered</strong> — Name Screening or Transaction Monitoring raises a hit
+                            that meets the case-creation threshold, and Case Manager opens a case automatically</li>
+                        <li><strong>Investigator Review</strong> — an analyst examines the customer, transaction, or
+                            match details behind the alert</li>
+                        <li><strong>Findings Documented</strong> — the analyst records what was checked and why,
+                            building the evidence trail for the eventual disposition</li>
+                        <li><strong>Disposition</strong> — the analyst closes the case as a <strong>False Match</strong>
+                            (no further action), or marks it a <strong>True Match</strong> to escalate for an SAR/STR
+                            filing, or selects <strong>Request Info</strong> to pause the case pending more information
+                            from the business or customer</li>
+                        <li><strong>MLRO Approval</strong> — for cases escalated toward a filing, the Money Laundering
+                            Reporting Officer reviews and approves before submission</li>
+                        <li><strong>Audit Record</strong> — every stage above, and who performed it, is permanently
+                            logged against the case</li>
+                    </ul>
+                    <p>A case can bundle several related alerts (see the Alerts column in <a href="#s-2-3">Case List
+                            Columns</a>), and each one is individually disposed through the <strong>Dispose Alert</strong>
+                        dialog, opened from within the case:</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>From the case's detail screen, select the alert to dispose and click Dispose Alert</li>
+                            <li>Choose the Disposition — True Match, False Match, or Potential Match</li>
+                            <li>Select a Rationale Code that best matches the reason for the decision (e.g.
+                                Identification Number Match)</li>
+                            <li>Enter Rationale Details — a minimum of 10 characters explaining the finding</li>
+                            <li>Attach Supporting Documents if needed (up to 5 attachments, up to 20 MB each)</li>
+                            <li>Click Submit Decision to record the disposition against that alert</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-014.png" width="1918" height="874"
+                            alt="Figure 2.12 — Dispose Alert" loading="lazy">
+                        <figcaption>Figure 2.12 — Dispose Alert: recording a disposition, rationale, and supporting documents for one alert within a case.</figcaption>
+                    </figure>
+                    <h3 id="s-2-3">Case List Columns</h3>
+                    <p>The case list surfaces the information an analyst needs to triage their queue without opening
+                        every case:</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Case Title / ID</td>
+                                    <td>The customer or subject name, plus the unique case reference (e.g.
+                                        CASE-2026-0000087)</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>Where the case currently sits — e.g. STR Created, STR Draft, Reopened, or Closed
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Disposition</td>
+                                    <td>The investigation outcome — True Match, False Match, or blank while still under
+                                        review</td>
+                                </tr>
+                                <tr>
+                                    <td>Assigned To</td>
+                                    <td>The analyst currently responsible for the case</td>
+                                </tr>
+                                <tr>
+                                    <td>Alerts</td>
+                                    <td>How many alerts are linked to this case — a case can bundle several related
+                                        alerts on the same customer</td>
+                                </tr>
+                                <tr>
+                                    <td>Case Age</td>
+                                    <td>Days elapsed since the case was created, used to track against internal SLAs
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Created At</td>
+                                    <td>Date and time the case was opened</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>A case with Status <strong>STR Created</strong> and Disposition <strong>True Match</strong>
+                            means the analyst confirmed the hit was genuine and an STR has already been filed; a case
+                            showing <strong>Reopened</strong> means it was previously closed but new information brought
+                            it back for another look.</p>
+                    </div>
+                                                            <h3 id="s-2-4">Filing an STR</h3>
+                    <p>An STR can only be filed once a case reaches the right point in its lifecycle — it isn't
+                        available the moment a case is created. The path is: close every alert linked to the case,
+                        close the case itself with a <strong>True Match</strong> disposition, and only then does the
+                        platform offer <strong>File STR</strong>. The walkthrough below follows one real case
+                        (Pooja Sharma, CASE-2026-0034617) through all three stages, end to end.</p>
+
+                    <div class="note-box"><span class="box-label">Note</span>You cannot file an STR on an Open case,
+                        and you cannot close a case while it still has open alerts. Both alerts and the case itself
+                        must be disposed of first — the platform enforces this order and will not let you skip a
+                        step.</div>
+
+                    <h4 class="h4-plain">Stage 1 — Dispose of every alert on the case</h4>
+                    <p>Open the case from <a href="#case-manager">Case Manager</a>. An open case with no disposition
+                        yet shows a plain <strong>Open</strong> status in the case list — this is the starting point
+                        before any of the work below happens.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-046.png" alt="Case Manager list showing an Open case with no disposition"
+                            loading="lazy" width="1918" height="873">
+                        <figcaption>Figure 2.13 — An Open case in the list, ready to be worked.</figcaption>
+                    </figure>
+                    <p>If the case still has an active alert (shown as a card just below the case header), that
+                        alert must be resolved before the case can be closed — the <strong>Disposition</strong> field
+                        at the top still reads "Select Outcome" at this point, confirming the case itself hasn't been
+                        decided yet.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-047.png" alt="Case Details showing an open alert with the Dispose Alert button"
+                            loading="lazy" width="1918" height="877">
+                        <figcaption>Figure 2.14 — Disposing the case's one active alert — the first prerequisite
+                            before the case can be closed.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Review the alert card (match score, watchlist name, screening rule) shown under the
+                                case header</li>
+                            <li>Click <strong>Dispose Alert</strong> and record its outcome — repeat for every alert
+                                attached to the case if there is more than one</li>
+                            <li>Only once all alerts are disposed does the case become eligible to close</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="h4-plain">Stage 2 — Close the case with a True Match disposition</h4>
+                    <p>With alerts cleared, open the case's close-case workflow. The dialog repeats the same rule as
+                        a safeguard — <em>"Make sure to close all alerts before making a disposition on this
+                        case"</em> — so if anything was missed, this is the last checkpoint before it's caught.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-048.png" alt="Close case dialog with True Match disposition and rationale code selection"
+                            loading="lazy" width="1918" height="868">
+                        <figcaption>Figure 2.15 — Selecting True Match — the specific outcome that later unlocks STR
+                            filing.</figcaption>
+                    </figure>
+                    <p>The Rationale Code field records the standardized reason behind the disposition, paired with
+                        free-text Rationale Details (minimum 10 characters) explaining the decision in plain
+                        language.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-049.png" alt="Close case dialog with Rationale Code field focused"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure 2.16 — The Rationale Code selected for this disposition.</figcaption>
+                    </figure>
+                    <p>Once Disposition, Rationale Code, and Rationale Details are all filled in, Close case becomes
+                        clickable.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-050.png" alt="Close case dialog fully filled in, with the Close case button enabled"
+                            loading="lazy" width="1918" height="870">
+                        <figcaption>Figure 2.17 — Submitting the disposition once every required field is
+                            complete.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Under <strong>Disposition</strong>, choose <strong>True Match</strong> — this is the
+                                specific outcome that later unlocks STR filing (False Match or Potential Match do
+                                not)</li>
+                            <li>Pick a <strong>Rationale Code</strong> from the dropdown, and write <strong>Rationale
+                                Details</strong> explaining the decision (10 characters minimum)</li>
+                            <li>Optionally attach supporting documents (up to 5 files, 20 MB each)</li>
+                            <li>Click <strong>Close case</strong> once all three required fields are filled in</li>
+                        </ul>
+                    </div>
+                    <p>The case immediately reflects the closure: Status changes to <strong>Closed</strong>, the
+                        Disposition badge shows <strong>True Match</strong>, and — this is the moment STR filing
+                        becomes possible — a new <strong>File STR</strong> button appears next to Re-Open.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-051.png" alt="Case closed confirmation with the File STR button now available"
+                            loading="lazy" width="1918" height="873">
+                        <figcaption>Figure 2.18 — Case closed. The File STR button only appears here, after closure
+                            with a True Match disposition — never before.</figcaption>
+                    </figure>
+
+                    <h4 class="h4-plain">Stage 3 — File the STR</h4>
+                    <p>Clicking <strong>File STR</strong> opens a 6-step wizard that assembles a
+                        GoTRACS-compliant Suspicious Transaction Report. Each step must be completed before moving to
+                        the next; progress is tracked across the top of the dialog.</p>
+
+                    <p><strong>Step 1 — Select Alerts.</strong> Choose which of the case's alerts to include in this
+                        STR. Every transaction and party used later in the wizard is pulled from whichever alerts are
+                        selected here, so it's worth confirming this before moving on.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-052.png" alt="STR wizard Step 1: Select Alerts, with one alert checked"
+                            loading="lazy" width="1918" height="865">
+                        <figcaption>Figure 2.19 — Step 1: Select Alerts. Alerts are pre-selected by default; deselect
+                            any that shouldn't be part of this report.</figcaption>
+                    </figure>
+
+                    <p><strong>Step 2 — Report Type.</strong> This step covers everything GoTRACS needs to know about
+                        the filing itself, not the case. STR Type is usually Regular STR for most cases — High
+                        Priority, Bulk Report, Per Account, and Highly Unusual exist for specific regulatory
+                        scenarios (kidnapping, trafficking, and similarly urgent categories use High Priority, for
+                        example). Submission Type is almost always "New" for a first-time filing.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-053.png" alt="STR wizard Step 2: Report Type, with Submission type dropdown open"
+                            loading="lazy" width="1918" height="871">
+                        <figcaption>Figure 2.20 — Choosing the Submission Type.</figcaption>
+                    </figure>
+                    <p>Date of determination is the date the covered person knew, or should have known, the
+                        transaction was suspicious. This date starts the regulatory filing-deadline clock.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-054.png" alt="STR wizard Step 2 date picker for Date of determination"
+                            loading="lazy" width="1918" height="865">
+                        <figcaption>Figure 2.21 — Setting the Date of Determination.</figcaption>
+                    </figure>
+                    <p>Supervising agency identifies the regulator this report is being filed with.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-055.png" alt="STR wizard Step 2 Supervising agency dropdown open"
+                            loading="lazy" width="1918" height="864">
+                        <figcaption>Figure 2.22 — Selecting the Supervising Agency.</figcaption>
+                    </figure>
+                    <p>STR trigger records what actually prompted the filing — a proactive review, a watchlist
+                        match, a freeze order, and so on.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-056.png" alt="STR wizard Step 2 STR trigger dropdown open"
+                            loading="lazy" width="1918" height="880">
+                        <figcaption>Figure 2.23 — Selecting the STR Trigger.</figcaption>
+                    </figure>
+                    <p>Once every field in this step is filled in, the filing deadline is calculated automatically
+                        and shown live.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-057.png" alt="STR wizard Step 2 fully completed, showing the computed filing deadline"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure 2.24 — Step 2 complete, with the filing deadline confirmed.</figcaption>
+                    </figure>
+
+                    <p><strong>Step 3 — Reason for Suspicion.</strong> Select one or more codes describing why the
+                        activity is suspicious, from a list of 43 standardized Suspicious Circumstance (SC), Predicate
+                        Crime (PC), and Money Laundering (MC) codes.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-058.png" alt="STR wizard Step 3: Reason for suspicion codes, with one code checked"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure 2.25 — Step 3: Reason for suspicion. At least one code is required; most
+                            filings use two or three.</figcaption>
+                    </figure>
+                    <p>Some codes carry extra requirements — a KYC REQ tag means additional KYC documentation must
+                        be on file before that particular code can be used. An optional Additional reason codes
+                        section further down lets you add secondary codes beyond your primary selection, then
+                        Next Step continues once every relevant code has been selected.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-059.png" alt="STR wizard Step 3 with Additional reason codes and Next Step"
+                            loading="lazy" width="1918" height="867">
+                        <figcaption>Figure 2.26 — Additional reason codes, with Next Step ready once selections are
+                            complete.</figcaption>
+                    </figure>
+
+                    <p><strong>Step 4 — Transaction.</strong> Every transaction attached to the selected alert(s)
+                        appears here, pre-selected by default. Filter by type if the list is long.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-060.png" alt="STR wizard Step 4: Transaction type filter dropdown"
+                            loading="lazy" width="1918" height="877">
+                        <figcaption>Figure 2.27 — Step 4: Transaction, with the type filter available.</figcaption>
+                    </figure>
+                    <p>A date range narrows the list further to transactions within a specific period, useful when a
+                        case spans many transactions over time.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-061.png" alt="STR wizard Step 4 Period From and Period To date range fields"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure 2.28 — Narrowing transactions by date range. The total amount and
+                            transaction count update live as selections change.</figcaption>
+                    </figure>
+
+                    <p><strong>Step 5 — Subject Parties.</strong> Parties are auto-derived from the transactions
+                        selected in Step 4 — nothing to add manually in most cases. Click a party's row to expand it
+                        and confirm their details.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-062.png" alt="STR wizard Step 5: Subject parties, with Party role dropdown open"
+                            loading="lazy" width="1918" height="870">
+                        <figcaption>Figure 2.29 — Setting the Party Role (Subject of Suspicion, Beneficiary,
+                            Counterparty, Transactor, or Other Participant).</figcaption>
+                    </figure>
+                    <p>Entity Type distinguishes an individual from a corporate or other legal structure.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-063.png" alt="STR wizard Step 5 Entity type dropdown open"
+                            loading="lazy" width="1914" height="873">
+                        <figcaption>Figure 2.30 — Setting the Entity Type.</figcaption>
+                    </figure>
+
+                    <p><strong>Step 6 — Narratives.</strong> The final step is a free-text narrative explaining the
+                        filing in plain language. GoTRACS expects a narrative that answers <strong>who</strong> is
+                        involved, <strong>what</strong> the activity was, <strong>when</strong> and <strong>where</strong>
+                        it occurred, <strong>why</strong> it's suspicious, and <strong>how</strong> it was carried
+                        out — a minimum of 200 characters is required, and the character counter confirms when that
+                        bar is met.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-064.png" alt="STR wizard Step 6 empty narrative with character count requirement"
+                            loading="lazy" width="1918" height="873">
+                        <figcaption>Figure 2.31 — Step 6: Narratives, before writing anything — the minimum length
+                            requirement is shown live as you type.</figcaption>
+                    </figure>
+                    <p>Once the narrative meets the minimum length, Complete STR becomes clickable.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-065.png" alt="STR wizard Step 6: Narrative filled in, Complete STR button enabled"
+                            loading="lazy" width="1918" height="873">
+                        <figcaption>Figure 2.32 — Step 6: Narratives, complete.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Work through all 6 steps — Select Alerts, Report Type, Reason for Suspicion,
+                                Transaction, Subject Parties, Narratives — using Next Step to advance</li>
+                            <li><strong>Save as draft</strong> is available at every step if the filing needs to be
+                                finished later</li>
+                            <li>Click <strong>Complete STR</strong> once the narrative meets the 200-character
+                                minimum</li>
+                        </ul>
+                    </div>
+
+                    <p>Once completed, the case's Status updates one final time to <strong>STR Created</strong>, and
+                        the <strong>File STR</strong> button is replaced by <strong>Download STR</strong> — the
+                        filed report can now be downloaded at any time, and the case can still be re-opened later if
+                        needed.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-066.png" alt="Case details after STR filing, showing STR Created status and the Download STR button"
+                            loading="lazy" width="1869" height="842">
+                        <figcaption>Figure 2.33 — The completed filing. Status: STR Created, and the report is ready
+                            to download.</figcaption>
+                    </figure>

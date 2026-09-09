@@ -1,0 +1,155 @@
+<div class="sec-tag">Get Started</div>
+                    <h2>Getting Started</h2>
+                    <p class="sec-intro">FT AML is an Anti-Money Laundering (AML) platform that helps financial
+                        institutions detect suspicious activity, screen customers against regulatory watchlists, monitor
+                        transactions, manage investigations, and comply with AML/CTF regulations.</p>
+                    <h3 id="s-1-1">Platform Objectives</h3>
+                    <p>FT AML is built around a core set of objectives:</p>
+                    <ul class="check-list">
+                        <li>Detect suspicious financial transactions by continuously monitoring customer and transaction
+                            activity</li>
+                        <li>Support banks and financial institutions in complying with applicable AML and
+                            Counter-Terrorist Financing (CTF) regulations</li>
+                        <li>Assess and calculate customer risk based on configurable risk parameters and business rules
+                        </li>
+                        <li>Generate timely alerts for unusual or potentially suspicious activity requiring further
+                            investigation</li>
+                        <li>Enable compliance teams to efficiently investigate, manage, and resolve AML cases</li>
+                        <li>Minimize false positive alerts through intelligent rule design and optimized risk assessment
+                        </li>
+                        <li>Deliver a scalable, configurable AML platform comparable to leading AML solution providers
+                        </li>
+                    </ul>
+                    <h3 id="s-1-2">Login</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Platform URL → Login</p>
+                    <ul class="check-list">
+                        <li>Navigate to the FT AML Platform URL</li>
+                        <li>Enter your email and password</li>
+                        <li>Click <strong>Sign in</strong></li>
+                        <li>You will receive an OTP to verify your identity — enter it to complete login</li>
+                        <li>Once verified, you will land on the Homepage, the entry point to all modules</li>
+                        <li>Use <strong>Forgot Password</strong> if login fails after verifying credentials</li>
+                    </ul>
+<figure class="shot-wide">
+                        <img src="images/screenshot-001.png" width="1851" height="787"
+                            alt="Figure 1.1 — Login" loading="lazy">
+                        <figcaption>Figure 1.1 — Login</figcaption>
+                    </figure>
+                    <p>Secure authentication is the first line of defense for sensitive AML data, and every login is
+                        tied to a user account — supporting audit requirements by recording who created, modified, or
+                        closed an AML investigation.</p>
+                    
+                    <h3 id="s-1-3">Homepage</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Login → Homepage</p>
+                    <p>After entering valid credentials, the user is redirected to the Homepage. This is the central
+                        workspace for compliance teams, giving quick access to every AML module from one place and
+                        reducing time spent switching between investigations, screening, and monitoring activities.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-002.png" width="1918" height="870"
+                            alt="Figure 1.2 — FT AML Homepage" loading="lazy">
+                        <figcaption>Figure 1.2 — FT AML Homepage</figcaption>
+                    </figure>
+                    <h3 id="s-1-4">Roles &amp; Access</h3>
+                    <p>Every screen in FT AML is gated by the logged-in user's role — what a user sees on login, which
+                        module tabs they can open, and which actions are available to them all follow directly from the
+                        role assigned in <a href="#s-9-2">Admin → Roles &amp; Permissions</a>.</p>
+                    <ul class="check-list">
+                        <li><strong>Compliance Analyst</strong> — reviews alerts and screening hits and conducts
+                            first-level investigation. Sees only <strong>My Queue</strong> in Case Manager and Alert
+                            Manager, can run Watchlist Search and Manual Screening, and can close a case as False Match
+                            — but cannot approve an STR or edit any configuration screen.</li>
+                        <li><strong>Compliance Officer / MLRO</strong> — has all Compliance Analyst access plus
+                            <strong>All Cases</strong> / <strong>All Alerts</strong> visibility across the institution,
+                            reassignment rights from Admin View, sign-off authority on any case escalated as a True
+                            Match, and is the only role that can approve an STR filing in STR Listing.</li>
+                        <li><strong>AML Configuration Admin</strong> — the only role with edit access to Screening
+                            Configuration, Alert Configuration, and Transaction Monitoring rules/variables; maintains
+                            weightages, severity bands, rules, and typologies. Does not action alerts or cases directly.
+                        </li>
+                        <li><strong>IT / Platform Admin</strong> — manages user accounts and role assignment, data
+                            ingestion schedules, and overall platform availability; has access to Admin and Hierarchy
+                            Management but not the AML-specific configuration screens reserved for Configuration
+                            Admins.</li>
+                    </ul>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Access area</th>
+                                    <th>Compliance Analyst</th>
+                                    <th>Compliance Officer / MLRO</th>
+                                    <th>Configuration Admin</th>
+                                    <th>IT / Platform Admin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Case Manager / Alert Manager — My Queue</td>
+                                    <td>Yes</td>
+                                    <td>Yes</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Case Manager / Alert Manager — All Cases / All Alerts / Admin View</td>
+                                    <td>—</td>
+                                    <td>Yes</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Approve STR filing</td>
+                                    <td>—</td>
+                                    <td>Yes</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Name Screening / Alert Configuration (edit)</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>Yes</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Transaction Monitoring rules &amp; variables (edit)</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>Yes</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>User Management &amp; Data Ingestion schedules</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="note-box"><span class="box-label">Note</span>A single person can hold more than one
+                        role where an institution's policies allow it, but Configuration Admin access is kept separate
+                        from the analyst roles by design — the user who tunes a rule's threshold should not be the same
+                        user whose queue is measured against that threshold.</div>
+                    <h3 id="s-1-5">Module Overview</h3>
+                    <p>After logging in, users can access the full range of FT AML modules from the FT AML menu. The
+                        hierarchy below shows how the modules and their sub-features are organized, so you know where to
+                        find each feature before exploring it in detail.</p>
+                    <ul class="check-list">
+                        <li>Homepage — Dashboard, the landing workspace after login, giving an at-a-glance view of
+                            platform health, alert volume, and case load</li>
+                        <li>Customer Management — onboards and maintains a single source of truth for every customer
+                            profile screened or monitored elsewhere in the platform</li>
+                        <li>FT AML — Case Manager, Alert Manager, STR Listing, AI Manager, Name Screening
+                            (Watchlist Search, Manual Screening, Batch Screening, Delta Screening, Configuration →
+                            Alerts / Screening), Transaction Monitoring &amp; Rule Engine (Typology, Variables,
+                            Schedules), Data
+                            Ingestion (Watchlist, TMS)</li>
+                        <li>Reports — filter, export, and share operational and regulatory reporting drawn from Case
+                            Manager, Alert Manager, and STR Listing data</li>
+                        <li>Admin — profile, roles, and platform-wide settings, including User Management</li>
+                        <li>Hierarchy Management — organizational reporting structure and escalation paths</li>
+                    </ul>
+                    <p>Which of these a given user actually sees depends on their assigned role — see <a
+                            href="#s-1-4">Roles &amp; Access</a> for how access is scoped per module.</p>

@@ -1,0 +1,431 @@
+<div class="sec-tag">AI & Screening</div>
+                    <h2>Name Screening</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening
+                    </p>
+                    <p class="sec-intro">Screens individuals and entities against the LSEG watchlist database to
+                        identify potential sanctions, PEP, and adverse media matches.</p>
+                    <p>The module offers four ways to run a screen, used for different situations: <a href="#s-6-1">Watchlist
+                            Search</a> for an ad-hoc, on-demand lookup; <a href="#s-6-2">Manual Screening</a> for
+                        screening one customer with full profile detail during onboarding or review; <a
+                            href="#s-6-3">Batch Screening</a> for re-screening large customer populations on a
+                        schedule; and <a href="#s-6-4">Delta Screening</a> for automatically re-checking only the
+                        customers affected when the watchlist itself changes. All four draw on the same matching rules
+                        and severity bands set once in <a href="#s-6-5">Configuration</a>, so a match found through any
+                        method is scored and prioritized consistently.</p>
+                    <h3 id="s-6-1">Watchlist Search</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Watchlist Search
+                    </p>
+                    <p>Enables users to search for individuals or entities against the LSEG watchlist database. Used for
+                        ad-hoc, on-demand lookups — e.g. screening a customer against an international sanctions list
+                        before opening an account.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Enter the Name of the individual or entity in the search box</li>
+                            <li>(Optional) Apply additional filters such as Country, PEP Status, Category, or Entity to
+                                narrow the search results</li>
+                            <li>Click Search or press Enter</li>
+                            <li>Review the list of matching records displayed below</li>
+                        </ul>
+                    </div>
+<figure class="shot-wide">
+                        <img src="images/screenshot-025.png" width="1918" height="874"
+                            alt="Figure 6.1 — Watchlist Search" loading="lazy">
+                        <figcaption>Figure 6.1 — Watchlist Search</figcaption>
+                    </figure>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UID</td>
+                                    <td>The unique identifier for that watchlist record within the LSEG database</td>
+                                </tr>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>The individual or entity name as held on the watchlist</td>
+                                </tr>
+                                <tr>
+                                    <td>PEP Status</td>
+                                    <td>Whether the record is an Active politically exposed person, or another status
+                                        such as former PEP</td>
+                                </tr>
+                                <tr>
+                                    <td>Country</td>
+                                    <td>The country associated with the record</td>
+                                </tr>
+                                <tr>
+                                    <td>Category</td>
+                                    <td>Individual, Organization, or Political Individual/Organization</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>
+                                    <td>Where available — many watchlist entries carry only a partial or missing date of
+                                        birth, which is why Name and Address weightages matter so much for matching</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>A branch officer searches “John Smith” with Country set to United Kingdom and PEP Status set
+                            to Active, to quickly check whether a walk-in customer appears on any current sanctions or
+                            PEP list before opening an account.</p>
+                    </div>
+                    <p><strong>Record detail</strong> — clicking any result row opens the full watchlist record in a modal,
+                        organized into four tabs:</p>
+                    <ul class="check-list">
+                        <li><strong>Profile &amp; Identity</strong> — Gender/Type, Date of Birth, Place of Birth,
+                            Citizenship, Alternative Spelling, Age, Identification Number, Aliases, IDs/Passports, and
+                            Deceased Date</li>
+                        <li><strong>Risk &amp; Background</strong> — Position, PEP History, Title, Category,
+                            Sub-Category, Special Interests, PEP Status, and a Further Information/Biography panel
+                            covering biography, identification notes, and dated reports (e.g. arrests, convictions)</li>
+                        <li><strong>Network &amp; Locations</strong> — Addresses on file, associated Companies, and
+                            linked Associates by UID, for tracing related individuals or entities</li>
+                        <li><strong>Source</strong> — Links back to the original source articles or registers the
+                            record was compiled from, for independent verification</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-026.png" width="1918" height="877"
+                            alt="Figure 6.2 — Watchlist Search, Profile & Identity" loading="lazy">
+                        <figcaption>Figure 6.2 — Watchlist Search record detail, Profile & Identity tab.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-027.png" width="1918" height="874"
+                            alt="Figure 6.3 — Watchlist Search, Risk & Background" loading="lazy">
+                        <figcaption>Figure 6.3 — Watchlist Search record detail, Risk & Background tab, including biography and reports.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-028.png" width="1918" height="841"
+                            alt="Figure 6.4 — Watchlist Search, Network & Locations" loading="lazy">
+                        <figcaption>Figure 6.4 — Watchlist Search record detail, Network & Locations tab, showing addresses and linked associates.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-029.png" width="1918" height="853"
+                            alt="Figure 6.5 — Watchlist Search, Source" loading="lazy">
+                        <figcaption>Figure 6.5 — Watchlist Search record detail, Source tab, linking back to the originating articles.</figcaption>
+                    </figure>
+                    
+                    <h3 id="s-6-2">Manual Screening</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Manual Screening
+                    </p>
+                    <p>Allows users to screen an individual or entity by manually entering customer information. The
+                        system compares the provided details against the watchlist database using configured matching
+                        criteria and weightages to identify potential matches. This gives analysts flexibility to screen
+                        immediately during investigations, onboarding, periodic reviews, or whenever customer
+                        information changes — outside the scheduled automated screening cycle.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Enter the customer's Name</li>
+                            <li>Select the Entity Type (e.g. Individual or Organization)</li>
+                            <li>Provide additional details such as Gender, Date of Birth, Citizenship, and Address
+                                (optional but recommended for more accurate results)</li>
+                            <li>Review the matching weightages displayed at the top of the page</li>
+                            <li>Click Proceed to Screen to initiate the screening process</li>
+                        </ul>
+                    </div>
+<figure class="shot-wide">
+                        <img src="images/screenshot-030.png" width="1918" height="877"
+                            alt="Figure 6.6 — Manual Screening" loading="lazy">
+                        <figcaption>Figure 6.6 — Manual Screening</figcaption>
+                    </figure>
+                    <p>After clicking Proceed to Screen, the Screening Details page shows the resulting Matches — the number
+                        of hits found, and for each one a side-by-side comparison of the entered details against the
+                        watchlist record, with the Weightage and Score contributed by each field (Name, Nationality,
+                        Date of Birth, Address, Entity Type) and the overall match score and category (e.g. Low
+                        88.21%, Corporate). Selecting a match confirms it as the record to act on.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-031.png" width="1918" height="877"
+                            alt="Figure 6.7 — Manual Screening, Match Results" loading="lazy">
+                        <figcaption>Figure 6.7 — Manual Screening, Match Results: field-by-field weightage and score comparison behind a match.</figcaption>
+                    </figure>
+                    <p>The weightage bar at the top of the screen (e.g. Name 60%, Address 20%, Citizenship 10%, Gender
+                        5%, DOB 5%) shows exactly how much each field contributes to the final match score before you
+                        screen — set once for the whole institution in <a href="#s-6-5">Screening Configuration</a>, and
+                        simply displayed here for reference on every manual screen.</p>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>During onboarding, an analyst manually screens a new corporate client, “Meridian Trading
+                            Ltd”, entering its registered address and country of incorporation, and reviews the
+                            resulting match score before the account is approved.</p>
+                    </div>
+                    
+                    <h3 id="s-6-3">Batch Screening</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Batch Screening
+                    </p>
+                    <p>Screens large customer populations at once (e.g. nightly onboarding batches), letting
+                        institutions re-screen millions of records efficiently — e.g. running the entire customer base
+                        overnight the moment a new sanctions list is received, instead of reviewing customers
+                        individually. Batch Screening itself is now a <strong>read-only history</strong> of past
+                        runs — scheduling and triggering these runs is configured from <a href="#data-ingestion">Data
+                        Ingestion → Batch Ingestion</a> instead, keeping all recurring-job scheduling in one place
+                        across the platform.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to Batch Screening from the Name Screening menu</li>
+                            <li>View the list of past screening runs along with their status</li>
+                            <li>Use Search by Run ID, or Show Filters to narrow the list further</li>
+                            <li>Monitor run health using the dashboard cards (Total Runs, Processing, Completed,
+                                Failed)</li>
+                            <li>Click Refresh to pull the latest run status</li>
+                            <li>Click a row to open that run's Details panel</li>
+                        </ul>
+                    </div>
+                    <p>The dashboard cards at the top — Total Runs, Processing, Completed, Failed — give an
+                        at-a-glance health check before drilling into any one run. Each row in the table then
+                        shows:</p>
+<figure class="shot-wide">
+                        <img src="images/screenshot-032.png" width="1918" height="871"
+                            alt="Figure 6.8 — Batch Screening list, read-only run history" loading="lazy">
+                        <figcaption>Figure 6.8 — Batch Screening: a read-only history of past runs, searchable by Run ID.</figcaption>
+                    </figure>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Run Date / ID</td>
+                                    <td>When the run started, plus its unique Run ID reference</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>Screening Success, or a run still in progress or failed</td>
+                                </tr>
+                                <tr>
+                                    <td>Customers Scanned</td>
+                                    <td>How many customer records were screened in that run</td>
+                                </tr>
+                                <tr>
+                                    <td>Alerts</td>
+                                    <td>How many hits the run produced</td>
+                                </tr>
+                                <tr>
+                                    <td>Errors</td>
+                                    <td>Records that failed to process, if any</td>
+                                </tr>
+                                <tr>
+                                    <td>Duration</td>
+                                    <td>How long the run took, start to finish</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>Clicking a row</strong> opens that run's <strong>Details</strong> panel rather than a
+                        separate page. It repeats the Customers Scanned, Alerts, and Errors totals, then adds the
+                        exact Started, Completed, and Duration timestamps, the Input File the run was screened
+                        against, and a <strong>Download Results CSV</strong> button to export that run's screened
+                        records and alerts for offline review or record-keeping.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-084.png" width="1918" height="873"
+                            alt="Figure 6.9 — Batch Screening Details panel with Download Results CSV" loading="lazy">
+                        <figcaption>Figure 6.9 — Batch Screening Details panel: run totals, timestamps, input file, and the CSV export.</figcaption>
+                    </figure>
+                    <div class="note-box"><span class="box-label">Note</span>To change how often batch screening
+                        runs, or to pause/resume it, go to <a href="#data-ingestion">Data Ingestion → Batch
+                        Ingestion</a> — Batch Screening no longer has its own scheduling controls.</div>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>Each night, the institution's entire retail customer base is submitted as a batch job, so
+                            that any new sanctions or PEP list updates are checked against every customer without manual
+                            effort. The next morning, a compliance officer opens that run in Batch Screening to confirm
+                            it completed cleanly and download the results.</p>
+                    </div>
+                    
+                    <h3 id="s-6-4">Delta Screening</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Delta Screening
+                    </p>
+                    <p>Automatically re-screens previously screened customers when the watchlist updates — the primary
+                        control for continuous, rather than point-in-time, compliance. Only the customers affected by
+                        the latest watchlist update are re-screened — e.g. a previously cleared customer is
+                        automatically rechecked the moment a new sanctions list is published, without reprocessing the
+                        full customer base.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to Delta Screening from the Name Screening menu</li>
+                            <li>Review the scheduled screening runs displayed on the page</li>
+                            <li>Use the Search, Status, or Date Range filters to locate a specific screening run</li>
+                            <li>Monitor the screening schedule, including Next Run, Last Run, and Current Frequency</li>
+                            <li>Click Change Schedule to modify the screening frequency or timing, if required</li>
+                            <li>Select a completed run to review customers screened, alerts generated, and execution
+                                duration</li>
+                        </ul>
+                    </div>
+<figure class="shot-wide">
+                        <img src="images/screenshot-033.png" width="1918" height="873"
+                            alt="Figure 6.9 — Delta Screening" loading="lazy">
+                        <figcaption>Figure 6.9 — Delta Screening</figcaption>
+                    </figure>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Run Date</td>
+                                    <td>When that scheduled run executed, or Upcoming for the next scheduled run</td>
+                                </tr>
+                                <tr>
+                                    <td>Customers Scanned</td>
+                                    <td>How many previously screened customers were affected by the watchlist update and
+                                        therefore re-checked</td>
+                                </tr>
+                                <tr>
+                                    <td>Alerts Created</td>
+                                    <td>New hits produced by that run — often zero, since most watchlist updates don't
+                                        affect any existing customer</td>
+                                </tr>
+                                <tr>
+                                    <td>Frequency</td>
+                                    <td>How often delta screening runs, e.g. Every 2 Days</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>Scheduled, Completed, or a run currently in progress</td>
+                                </tr>
+                                <tr>
+                                    <td>Duration</td>
+                                    <td>How long the run took to complete</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>When a new sanctions list is published, only the customers affected by that update are
+                            automatically re-screened overnight, and any new hits appear in the Alert Manager the next
+                            morning — with no need to re-run the full customer base.</p>
+                    </div>
+                    
+                    <h3 id="s-6-5">Configuration</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Configuration</p>
+                    <p>Controls how strictly a record must match, and how resulting hits are prioritized for review.</p>
+                    <h4 class="h4-plain">Screening Configuration</h4>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Configuration →
+                        Screening</p>
+                    <p>Lets administrators configure the matching criteria and weightages used during screening. Each
+                        parameter — Name, Address, Citizenship, Gender, Date of Birth — can be assigned a custom
+                        weightage to determine the overall match score, so institutions can align screening sensitivity
+                        with their internal AML policies and risk appetite. Higher weightage strictness reduces false
+                        positives but risks missing true matches. A parameter can also be expanded into its own
+                        sub-criteria — for example Name into Fuzzy and Phonetic matching, or Address into Country,
+                        City, Street Address, and Region — for finer control over what drives that parameter's
+                        contribution to the score.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to Configuration → Screening from the Name Screening module</li>
+                            <li>Review the active screening configuration and the assigned weightages</li>
+                            <li>Click Edit to modify the screening configuration</li>
+                            <li>Configure the weightage for Name, Address, Citizenship, Gender, and Date of Birth</li>
+                            <li>Expand each section to configure its individual matching criteria</li>
+                            <li>Save the configuration to apply the updated screening rules</li>
+                        </ul>
+                    </div>
+                    <div class="note-box"><span class="box-label">Note</span>The total across Name, Address,
+                        Citizenship, Gender, and Date of Birth must always equal exactly <strong>100%</strong> — the
+                        platform will not save a configuration where the parameters sum to more or less than that.
+                        The same rule applies one level down: whenever a parameter is expanded into sub-criteria (e.g.
+                        Name split into Fuzzy and Phonetic matching), those sub-weightages must themselves add up to
+                        100% of that parameter's own share, not to 100% of the overall score.</div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-034.png" width="1918" height="871"
+                            alt="Figure 6.10 — Screening Configuration, Active Configuration" loading="lazy">
+                        <figcaption>Figure 6.10 — Screening Configuration, Active Configuration</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-035.png" width="1918" height="874"
+                            alt="Figure 6.11 — Screening Configuration, Configuration History" loading="lazy">
+                        <figcaption>Figure 6.11 — Screening Configuration, Configuration History</figcaption>
+                    </figure>
+                    <h4 class="h4-plain">Alert Configuration</h4>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Name Screening → Configuration →
+                        Alerts</p>
+                    <p>Lets administrators configure the alert severity levels generated during screening — defining
+                        score ranges, assigning severity levels, configuring SLA deadlines, and enabling
+                        auto-hibernation, so organizations can prioritize investigations and standardize alert handling
+                        based on risk.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to Configuration → Alerts from the Name Screening module</li>
+                            <li>Review the active alert configuration and its defined severity levels</li>
+                            <li>Click Edit to modify the existing alert configuration</li>
+                            <li>Configure Alert Name, Score Range (Min % – Max %), No Alert option, SLA Deadline, and
+                                Auto Hibernation for each severity level</li>
+                            <li>Save the configuration to apply the updated alert settings</li>
+                            <li>Select Alert Configuration History to view previously saved configurations</li>
+                        </ul>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Severity</th>
+                                    <th>Score Range</th>
+                                    <th>SLA Deadline</th>
+                                    <th>Auto Hibernate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Very Low</td>
+                                    <td>0% – 75%</td>
+                                    <td>No alert raised</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Low</td>
+                                    <td>75% – 79%</td>
+                                    <td>1 day</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Medium</td>
+                                    <td>79% – 85%</td>
+                                    <td>2 days</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td>High</td>
+                                    <td>85% – 90%</td>
+                                    <td>3 days</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td>Very High</td>
+                                    <td>90% – 100%</td>
+                                    <td>5 days</td>
+                                    <td>No</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>A match scoring below the Very Low threshold never becomes an alert at all — it's filtered out
+                        automatically. Auto Hibernate on the Low band means a low-severity alert that isn't actioned
+                        within its SLA is automatically archived rather than sitting open indefinitely, keeping analyst
+                        queues focused on alerts that genuinely need attention. Full configuration history is retained
+                        for audit.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-036.png" width="1918" height="873"
+                            alt="Figure 6.12 — Alert Configuration" loading="lazy">
+                        <figcaption>Figure 6.12 — Alert Configuration</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-037.png" width="1918" height="871"
+                            alt="Figure 6.13 — Alert Configuration, History Detail" loading="lazy">
+                        <figcaption>Figure 6.13 — Alert Configuration, History Detail</figcaption>
+                    </figure>

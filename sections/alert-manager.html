@@ -1,0 +1,100 @@
+<div class="sec-tag">Core Workflow</div>
+                    <h2>Alert Manager</h2>
+                    <p class="nav-crumb"><span>Navigation</span> FT AML → Alert Manager</p>
+                    <p class="sec-intro">Every hit generated anywhere in the platform — a name-screening match, a
+                        transaction-monitoring rule firing — lands here first, ranked by severity and SLA deadline,
+                        before it ever becomes a case.</p>
+                    <h3 id="s-3-1">Alert Queues</h3>
+                    <p>Like Case Manager, alerts are organized into three tabs: <strong>My Queue</strong> (alerts
+                        assigned to the logged-in user), <strong>All Alerts</strong> (the full institution-wide alert
+                        volume — this can run into the tens of thousands), and <strong>Admin View</strong> (oversight
+                        across every analyst's queue, showing Unassigned, Escalated, and SLA Breached alert counts
+                        alongside Active Agents data).</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Search by Entity name or Alert ID</li>
+                            <li>Use Show Filters to narrow by Module, Score, Status, or Assignee</li>
+                            <li>Click Refresh to pull newly generated alerts</li>
+                            <li>Click a row to open the full alert detail and, if warranted, escalate it into a case
+                            </li>
+                        </ul>
+                    </div>
+                    <p><strong>View Case</strong> — clicking a row opens the alert's detail screen, showing the match
+                        or rule detail that triggered it, the customer or entity involved, and the score breakdown
+                        behind it. From here an analyst either clears the alert directly, or escalates it — which
+                        creates (or attaches it to) a case and opens that case's own View Case screen in <a
+                            href="#s-2-1">Case Manager</a> for full investigation and disposition.</p>
+<figure class="shot-wide">
+                        <img src="images/screenshot-015.png" width="1918" height="874"
+                            alt="Figure 3.1 — Alert Manager, My Queue" loading="lazy">
+                        <figcaption>Figure 3.1 — Alert Manager, My Queue: alerts assigned to the logged-in user.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-016.png" width="1918" height="874"
+                            alt="Figure 3.2 — Alert Manager, All Alerts" loading="lazy">
+                        <figcaption>Figure 3.2 — Alert Manager, All Alerts</figcaption>
+                    </figure>
+<figure class="shot-wide">
+                        <img src="images/screenshot-017.png" width="1869" height="842"
+                            alt="Figure 3.3 — Alert Manager, Admin View" loading="lazy">
+                        <figcaption>Figure 3.3 — Alert Manager, Admin View</figcaption>
+                    </figure>
+                    <h3 id="s-3-2">Alert List Columns</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>What it shows</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Entity / Alert ID</td>
+                                    <td>The customer or subject name, plus a unique alert reference (e.g.
+                                        ALT-NS-20260717...)</td>
+                                </tr>
+                                <tr>
+                                    <td>Module</td>
+                                    <td>Which engine generated the alert — Name Screening or Transaction Monitoring</td>
+                                </tr>
+                                <tr>
+                                    <td>Score</td>
+                                    <td>The match or risk score as a percentage, color-coded to the severity band it
+                                        falls into (Low, Medium, High, Very High) as defined in Alert Configuration</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>Open, or a later workflow state once the alert has been actioned</td>
+                                </tr>
+                                <tr>
+                                    <td>Disposition</td>
+                                    <td>The outcome once reviewed — blank while still open</td>
+                                </tr>
+                                <tr>
+                                    <td>SLA Deadline</td>
+                                    <td>Shows On Track once the alert is within its configured resolution window, and
+                                        flags it once that window is at risk of being missed</td>
+                                </tr>
+                                <tr>
+                                    <td>Assigned To</td>
+                                    <td>The analyst responsible for reviewing the alert</td>
+                                </tr>
+                                <tr>
+                                    <td>Created At</td>
+                                    <td>When the alert was generated</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>The Score and SLA Deadline columns exist because of how severity bands are set up in <a
+                            href="#s-6-5">Alert Configuration</a> — each band (e.g. Medium: 79–85%) carries its own SLA
+                        window, so a higher-scoring alert is automatically given a tighter deadline than a low-scoring
+                        one.</p>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>An alert scoring 81.19% falls in the Medium band, which — per the institution's configured
+                            severity bands — carries a 2-day SLA deadline; an analyst working their queue by SLA
+                            Deadline will see this alert before a Low-scoring one with a longer window, even if the Low
+                            one was created earlier.</p>
+                    </div>

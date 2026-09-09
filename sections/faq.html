@@ -1,0 +1,265 @@
+<div class="sec-tag">Reference &amp; Support</div>
+                    <h2>Help &amp; Reference</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → Help &amp; Reference</p>
+                    <p class="sec-intro">Everything that isn't specific to one module: answers to common questions,
+                        every AML and platform term defined once, and how to reach the support team when something
+                        needs a human.</p>
+
+                    <h3 id="s-11-0">Frequently Asked Questions</h3>
+                    <p>Answers to the questions that come up most once teams are actually using the platform day to
+                        day, grouped by module.</p>
+
+                    <h4 class="h4-plain" id="s-11-1">Case Manager</h4>
+                    <p><strong>What's the difference between an alert and a case?</strong><br>An alert is the automated
+                        signal Name Screening or Transaction Monitoring raises. A case is what that alert becomes once
+                        it needs a human to actually look at it, document findings, and reach a disposition.</p>
+                    <p><strong>Who's allowed to close a case?</strong><br>An analyst can close a case they own as a
+                        False Match. Anything escalated as a True Match needs sign-off from a Compliance Officer or MLRO
+                        before it's actually closed.</p>
+                    <p><strong>Can a case be reassigned partway through?</strong><br>Yes — supervisors and officers can
+                        reassign a case from Admin View, which is useful when someone's out or a queue needs
+                        rebalancing.</p>
+                    <p><strong>Is everything done on a case actually logged?</strong><br>Yes. Every status change, note,
+                        and disposition is timestamped and attributed to the user who made it — that's the audit record
+                        described in <a href="#s-2-2">Case Lifecycle</a>.</p>
+
+                    <h4 class="h4-plain" id="s-11-2">Alert Manager</h4>
+                    <p><strong>Why does an alert sit in the queue instead of becoming a case straight
+                            away?</strong><br>Not every alert warrants a full investigation — Alert Manager is the
+                        triage layer where an analyst does a quick first pass and either clears it, or escalates it into
+                        a case in Case Manager.</p>
+                    <p><strong>Who can see alerts outside their own queue?</strong><br>My Queue is scoped to the
+                        logged-in analyst. Seeing everything — All Alerts — is limited to Compliance Officers and
+                        supervisors using Admin View.</p>
+                    <p><strong>What are alerts ranked upon?</strong><br>Primarily the <strong>Score</strong> and the
+                        <strong>SLA Deadline</strong> that follows from it. Every alert's match or risk score maps to a
+                        severity band (Low, Medium, High, Very High) configured in <a href="#s-6-5">Alert
+                            Configuration</a>, and each band carries its own SLA window — so a higher-scoring alert is
+                        automatically given a tighter deadline than a lower-scoring one, regardless of which was
+                        created first. Sorting the queue by SLA Deadline surfaces the alerts most at risk of breaching
+                        their window first, which is the recommended way to work a busy queue.</p>
+                    <p><strong>Our alert volume feels too high — what actually helps?</strong><br>That's usually a
+                        configuration issue, not a triage issue — it means the severity bands or matching weightages in
+                        <a href="#s-6-5">Configuration</a> need tightening, not that analysts need to work faster. Raise
+                        it with a Configuration Admin.</p>
+
+                    <h4 class="h4-plain" id="s-11-3">STR Listing</h4>
+                    <p><strong>What's the difference between a case and an STR?</strong><br>The case is the internal
+                        investigation file. The STR is the formal report that gets filed externally with the FIU once
+                        that investigation confirms suspicious activity.</p>
+                    <p><strong>Who has to sign off before an STR is filed?</strong><br>The MLRO, or another designated
+                        Compliance Officer with filing authority — this is the "MLRO Approval" step in the Case
+                        Lifecycle.</p>
+                    <p><strong>Can an STR be raised straight from an open case?</strong><br>Yes — escalating a case
+                        toward a filing is what creates its STR Listing entry; there's no separate form to fill in from
+                        scratch.</p>
+
+                    <h4 class="h4-plain" id="s-11-4">Name Screening</h4>
+                    <p><strong>What actually counts as a match if the spelling is slightly different?</strong><br>That's
+                        what Fuzzy matching is for — it's built to catch spelling variants and transliterations, not
+                        just exact string matches. See <a href="#s-6-5">Screening Configuration</a> for how much weight
+                        it carries in the score.</p>
+                    <p><strong>Can I screen a company as well as a person?</strong><br>Yes — Entity Type on the Manual
+                        Screening form supports both Individual and Organization.</p>
+                    <p><strong>If I mark a hit as a false positive, is that decision recorded anywhere?</strong><br>Yes
+                        — the disposition and the analyst's rationale are both logged against that screening record for
+                        audit, the same as any other case disposition.</p>
+                    <p><strong>Who keeps the watchlists themselves up to date?</strong><br>The data itself comes from
+                        the provider (LSEG) via the scheduled ingestion jobs covered in <a href="#s-8-1">Data
+                            Ingestion</a> — Configuration Admins manage the screening rules on top of it, not the
+                        underlying list content.</p>
+
+                    <h4 class="h4-plain" id="s-11-5">Transaction Monitoring</h4>
+                    <p><strong>Is there a way to test a new rule before it goes live?</strong><br>Yes — that's exactly
+                        what Dry Run is for: running the rule against historical data to see what it would have caught,
+                        before it's published and starts generating real alerts.</p>
+                    <p><strong>Who's allowed to create or publish a rule?</strong><br>Only users with Configuration
+                        Admin permissions — it's kept separate from the analyst role deliberately, since a bad threshold
+                        change affects every alert the rule generates afterward.</p>
+                    <p><strong>Does monitoring run in real time?</strong><br>It runs on the rule's configured Execution
+                        Interval — anywhere from near real-time to daily, depending on how the rule is set up — rather
+                        than being instant for every rule by default.</p>
+
+                    <h4 class="h4-plain" id="s-11-6">Data Ingestion</h4>
+                    <p><strong>What file formats does ingestion accept?</strong><br>CSV, XML, and JSON are supported
+                        natively, along with proprietary formats through custom connectors where needed.</p>
+                    <p><strong>What happens if a batch job partially fails?</strong><br>Whatever rows did load
+                        successfully are kept, and the failed rows are logged as errors for review — a partial failure
+                        doesn't roll back the entire batch.</p>
+                    <p><strong>Who's responsible for data quality issues — us or the platform?</strong><br>It's shared:
+                        the source system owner is responsible for what's in the file, and the AML Platform Admin is
+                        responsible for the mapping and validation rules that catch problems on the way in.</p>
+
+                    <h3 id="s-12-1">Glossary</h3>
+                    <p>Terms used throughout this guide, in one place.</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Definition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Case</td>
+                                    <td>The formal investigation record opened in Case Manager once an alert needs human
+                                        review.</td>
+                                </tr>
+                                <tr>
+                                    <td>Delta Screening</td>
+                                    <td>A screening run that re-checks only the customers affected by a watchlist
+                                        update, rather than the full customer base.</td>
+                                </tr>
+                                <tr>
+                                    <td>Dry Run</td>
+                                    <td>Running a transaction monitoring rule against historical data to see what it
+                                        would have flagged, before publishing it live.</td>
+                                </tr>
+                                <tr>
+                                    <td>Escalation Path</td>
+                                    <td>The automatic routing of an unresolved case or alert up to a supervisor, as
+                                        defined in Hierarchy Management.</td>
+                                </tr>
+                                <tr>
+                                    <td>False Match</td>
+                                    <td>A hit — on a screening match or a transaction rule — that turns out to be
+                                        legitimate activity incorrectly flagged.</td>
+                                </tr>
+                                <tr>
+                                    <td>FIU (Financial Intelligence Unit)</td>
+                                    <td>The national agency that receives Suspicious Transaction Reports.</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuzzy Matching</td>
+                                    <td>A name-matching technique that catches spelling variants and transliterations,
+                                        not just exact matches.</td>
+                                </tr>
+                                <tr>
+                                    <td>Hierarchy</td>
+                                    <td>The institution's formal reporting structure — who sits above whom — modeled in
+                                        Hierarchy Management.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ingestion Job</td>
+                                    <td>A single run of loading data — watchlist, transaction, or entity records — into
+                                        the platform.</td>
+                                </tr>
+                                <tr>
+                                    <td>Maker-Checker</td>
+                                    <td>A dual-control process where one person prepares an action (e.g. a new rule) and
+                                        a different person must approve it before it takes effect.</td>
+                                </tr>
+                                <tr>
+                                    <td>Mapping</td>
+                                    <td>The rules that define how fields in an incoming source file correspond to fields
+                                        inside the platform.</td>
+                                </tr>
+                                <tr>
+                                    <td>MLRO (Money Laundering Reporting Officer)</td>
+                                    <td>The individual with the authority to approve and file an STR.</td>
+                                </tr>
+                                <tr>
+                                    <td>PEP (Politically Exposed Person)</td>
+                                    <td>Someone who holds — or is closely linked to someone who holds — a prominent
+                                        public position, and therefore carries elevated AML risk.</td>
+                                </tr>
+                                <tr>
+                                    <td>Rule Engine</td>
+                                    <td>The configurable system behind Transaction Monitoring that evaluates
+                                        transactions against variables and typologies.</td>
+                                </tr>
+                                <tr>
+                                    <td>Severity</td>
+                                    <td>The risk band assigned to an alert (Low, Medium, High, Very High), which drives
+                                        its SLA deadline.</td>
+                                </tr>
+                                <tr>
+                                    <td>SLA (Service Level Agreement)</td>
+                                    <td>The maximum time allowed to action an alert or case before it's considered
+                                        overdue.</td>
+                                </tr>
+                                <tr>
+                                    <td>Smurfing</td>
+                                    <td>Using multiple individuals to conduct several small transactions on behalf of
+                                        one person or organization, keeping each transaction under reporting thresholds
+                                        to avoid detection.</td>
+                                </tr>
+                                <tr>
+                                    <td>STR (Suspicious Transaction Report)</td>
+                                    <td>The formal report filed with the FIU once a case confirms suspicious activity.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structuring</td>
+                                    <td>Deliberately breaking a single large transaction into multiple smaller ones to
+                                        stay under a reporting threshold and avoid triggering mandatory reporting.</td>
+                                </tr>
+                                <tr>
+                                    <td>Triage</td>
+                                    <td>The first, quick review of a new alert to decide whether it needs to be
+                                        escalated into a full case.</td>
+                                </tr>
+                                <tr>
+                                    <td>Typology</td>
+                                    <td>A named, predefined pattern of suspicious transaction behaviour — e.g.
+                                        Structuring or Smurfing — that a monitoring rule is built to detect.</td>
+                                </tr>
+                                <tr>
+                                    <td>Validation</td>
+                                    <td>The checks applied during ingestion to confirm incoming data meets the
+                                        platform's technical and business requirements.</td>
+                                </tr>
+                                <tr>
+                                    <td>Watchlist</td>
+                                    <td>The database of sanctioned, PEP, or otherwise high-risk individuals and entities
+                                        that screening checks customers against.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="s-13-1">Help &amp; Support</h3>
+                    <h4 class="h4-plain">Common Issues &amp; Solutions</h4>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Issue</th>
+                                    <th>Solution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Login failed</td>
+                                    <td>Verify credentials, or use Forgot Password</td>
+                                </tr>
+                                <tr>
+                                    <td>Ingestion job stuck in Processing</td>
+                                    <td>Check source feed, click Refresh, escalate to IT/Platform Admin</td>
+                                </tr>
+                                <tr>
+                                    <td>Screening returns no matches</td>
+                                    <td>Confirm watchlist ingestion completed successfully</td>
+                                </tr>
+                                <tr>
+                                    <td>Unexpected spike in alerts</td>
+                                    <td>Review recent weightage or rule threshold changes</td>
+                                </tr>
+                                <tr>
+                                    <td>Rule not triggering as expected</td>
+                                    <td>Run a Dry Run to validate conditions against historical data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4 class="h4-plain">Contact Support</h4>
+                    <p>Tell us a little about what you're working on and the team will route you to the right person —
+                        typically within one business day.</p>
+                    <ul class="check-list">
+                        <li><strong>Email</strong> — <a href="mailto:hello@fyscaltech.com">hello@fyscaltech.com</a></li>
+                        <li><strong>Phone</strong> — +65 8080 5424</li>
+                        <li><strong>Headquarters</strong> — Singapore · 68 Circular Road</li>
+                        <li><strong>Response time</strong> — under 1 business day</li>
+                    </ul>
+                    <p class="thanks">Thank you for using FT AML.</p>

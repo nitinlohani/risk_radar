@@ -1,0 +1,132 @@
+<div class="sec-tag">AI & Screening</div>
+                    <h2>AI Manager</h2>
+                    <p class="nav-crumb"><span>Navigation</span> FT AML → AI Manager</p>
+                    <p class="sec-intro">Assists analysts by automating the repetitive first pass through an alert or
+                        case, so human review time goes toward judgement calls rather than data-gathering. Configured
+                        through two tabs on this same page — <strong>Prompt Config</strong> (what it's instructed to
+                        do) and <strong>Model Config</strong> (which model it calls) — with alerts also routable
+                        into cases automatically via <a href="#automation">Automation</a>, a separate module.</p>
+
+                    <h3 id="s-5-1">What It Does</h3>
+                    <p>Rather than an analyst manually pulling together a customer's screening history, transaction
+                        pattern, and prior case notes before forming a view, AI Manager pre-assembles that context and
+                        drafts a preliminary summary — the starting point for the analyst's own review, not a
+                        replacement for it.</p>
+                    <ul class="check-list">
+                        <li>Pulls together the relevant screening hits, transaction history, and prior cases for the
+                            subject of a new alert</li>
+                        <li>Drafts a preliminary summary of what looks unusual and why, for the analyst to confirm,
+                            edit, or reject</li>
+                        <li>Flags patterns worth a closer look — e.g. a customer with several recent low-scoring alerts
+                            that, taken together, may be more significant than any single one</li>
+                        <li>Reduces time spent on repetitive data-gathering so analysts can focus on judgement and
+                            disposition</li>
+                    </ul>
+
+                    <h3 id="s-5-2">Where Human Review Still Applies</h3>
+                    <p>Every output from AI Manager is a draft, not a decision. The Case Lifecycle in <a
+                            href="#s-2-2">Case Manager</a> still applies in full — an analyst reviews the AI-drafted
+                        findings, corrects anything wrong, and is the one who selects the final disposition. Nothing
+                        AI Manager produces is filed, closed, or escalated without that human sign-off.</p>
+
+                    <h3 id="s-5-3">Prompt Config</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → AI Manager → Prompt Config</p>
+                    <p>Defines the actual instructions given to the model registered in <a href="#s-5-4">Model
+                        Config</a> — the other half of what makes AI Manager's drafting work. Most prompts are built
+                        around a specific purpose, like summarizing a transaction monitoring alert versus a name
+                        screening alert — but one prompt, <strong>Case Copilot</strong>, is different: it's the
+                        shared persona and formatting rules used underneath every copilot intent, rather than a
+                        summary for one alert type.</p>
+                    <p>Each prompt is shown as its own card: the <strong>Purpose</strong> as the title, a
+                        <strong>Status</strong> (Active), its current <strong>version</strong>, when it was last
+                        published, and how many <strong>revisions</strong> it's been through — plus a plain-language
+                        description of what the prompt does underneath.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-089.png" alt="AI Manager Prompt Config tab showing three prompt cards including the new Case Copilot"
+                            loading="lazy" width="1918" height="871">
+                        <figcaption>Figure AI.1 — Prompt Config: Case Copilot is the new shared persona behind every copilot intent.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Click <strong>Prompt Config</strong> in the top right of AI Manager</li>
+                            <li>Scan each card's Status and version badge to confirm which prompt is Active and what
+                                revision it's on</li>
+                            <li>Click a card (or its chevron) to open the full prompt read-only, or click
+                                <strong>Edit</strong> from there to change it</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="h4-plain">Editing a prompt</h4>
+                    <p>Every prompt is built from three parts: <strong>Description</strong> (what the purpose is
+                        for), <strong>Task</strong> (one instruction — the specific thing to do each run), and
+                        <strong>Role</strong> (the persona and rules the model follows throughout). Editing always
+                        shows exactly which version you're changing and what publishing will produce — an explicit
+                        <strong>"Editing from vX · publishing creates vX+1"</strong> banner, so it's never ambiguous
+                        whether a save overwrites history or adds to it. It never overwrites: publishing always
+                        creates the next version, keeping every prior revision intact.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-092.png" alt="Editing the Case Copilot prompt, showing the Editing from v1 publishing creates v2 banner"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure AI.2 — Editing Case Copilot: the banner states exactly which version is being edited and what publishing creates.</figcaption>
+                    </figure>
+
+                    <h4 class="h4-plain">Version history</h4>
+                    <p>The read-only view carries a version stepper at the top — back/forward arrows plus a
+                        dropdown that lists every past version by number and publish date, with a search box to jump
+                        straight to a specific one (e.g. "7"). This is a full history, not just current-vs-previous:
+                        every version a prompt has ever had stays reachable.</p>
+
+                    <h4 class="h4-plain">Expected Response</h4>
+                    <p>Below Role, a prompt can define <strong>Expected Response</strong> — the structured fields the
+                        model's output must fill in, rather than free-form text. Each field lists its name, a type
+                        badge where relevant (<code>list</code>), and guidance on what belongs in it; a field can also
+                        be an <strong>enum</strong> — a fixed set of options the model must choose from, such as
+                        Case Copilot's own <code>sections</code>/<code>title</code>/<code>items</code> contract, or
+                        the Transaction Monitoring prompt's 8-field response with a <code>verdict</code> that must be
+                        one of <em>suspicious_activity</em>, <em>expected_behavior</em>, <em>inconclusive</em>, or
+                        <em>insufficient_data</em>.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-093.png" alt="Case Copilot read view showing Expected Response with 3 fields: sections, title, items"
+                            loading="lazy" width="1918" height="876">
+                        <figcaption>Figure AI.3 — Expected Response defines the exact shape of the model's output, field by field.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-094.png" alt="Transaction Monitoring prompt's Expected Response showing the verdict enum field"
+                            loading="lazy" width="1918" height="873">
+                        <figcaption>Figure AI.4 — A larger example: the Transaction Monitoring prompt's 8-field response, including the verdict enum.</figcaption>
+                    </figure>
+                    <div class="note-box"><span class="box-label">Note</span>Expected Response is what keeps every
+                        copilot output structured and predictable — Case Manager and Alert Manager can render the
+                        AI's findings consistently because they know in advance exactly which fields to expect.</div>
+
+
+                    <h3 id="s-5-4">Model Config</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → AI Manager → Model Config</p>
+                    <p>Registers the AI model identity AI Manager actually calls — e.g. <code>openai/gpt-oss-120b</code>
+                        — together with its API key, version, and <strong>Temperature</strong> (how deterministic
+                        versus varied its output is). Only one configuration is Active at a time.</p>
+                    <p>The API key field is write-only by design — once saved, it's stored encrypted and can never be
+                        viewed again through the interface, only replaced via <strong>Edit model</strong>. Every past
+                        configuration is kept below under <strong>Previous configurations</strong>, each showing its
+                        own version, status, temperature, and publish date.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-090.png" alt="AI Manager Model Config tab showing the active model and previous configurations with Restore"
+                            loading="lazy" width="1918" height="784">
+                        <figcaption>Figure AI.2 — Model Config: the active model, plus every previous configuration with Restore.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Click <strong>Model Config</strong> in the top right of AI Manager</li>
+                            <li>Click <strong>Edit model</strong> to change the model identity, API key, version, or
+                                Temperature</li>
+                            <li>Saving replaces the Active configuration — the one it replaces automatically drops
+                                into Previous configurations as Inactive</li>
+                            <li>Click <strong>Restore</strong> on any previous configuration to make it Active again,
+                                without having to re-enter its details from scratch</li>
+                        </ul>
+                    </div>
+                    <div class="note-box"><span class="box-label">Note</span>Restoring a previous configuration
+                        doesn't reveal its old API key — that stays encrypted the same way it would for a brand new
+                        entry, so restoring still requires the key to be valid and current.</div>

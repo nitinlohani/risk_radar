@@ -1,0 +1,53 @@
+<div class="sec-tag">Administration</div>
+                    <h2>Admin</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → Admin</p>
+                    <p class="sec-intro">The platform-wide settings area — separate from the module-specific
+                        configuration screens covered elsewhere in this guide. Covers your own account, who can do
+                        what across the platform, and the organizational reporting structure everything else routes
+                        through.</p>
+                    <h3 id="s-9-1">Profile &amp; Preferences</h3>
+                    <ul class="check-list">
+                        <li>Edit your display name, email, and contact details</li>
+                        <li>Update notification preferences — e.g. which alert severities trigger an email</li>
+                        <li>Change password and manage login security settings</li>
+                    </ul>
+                    <h3 id="s-9-2">Roles &amp; Permissions</h3>
+                    <p>Controls who can see and do what across the platform, aligned to the roles introduced in <a
+                            href="#s-1-4">Roles &amp; Access</a>:</p>
+                    <ul class="check-list">
+                        <li>Assign each user a role — Compliance Analyst, Compliance Officer/MLRO, AML Configuration
+                            Admin, or IT/Platform Admin</li>
+                        <li>Restrict access to sensitive configuration screens (screening weightages, alert severity
+                            bands, transaction monitoring rules) to Configuration Admins only</li>
+                        <li>Control which users can approve STR filings, restricted to Compliance Officers/MLROs</li>
+                    </ul>
+                    <h3 id="s-9-3">Configuration Access</h3>
+                    <p>Admin is also the hub that links out to every configuration screen covered elsewhere in this
+                        guide, rather than duplicating them:</p>
+                    <ul class="check-list">
+                        <li>Screening weightages and severity bands — see <a href="#s-6-5">Name Screening →
+                                Configuration</a></li>
+                        <li>Transaction monitoring rules and variables — see <a href="#s-7-1">Transaction Monitoring
+                                &amp; Rule Engine</a></li>
+                        <li>Automatic case-creation rules — see <a href="#s-au-1">Automation → Case Creation</a></li>
+                        <li>Organizational reporting structure — see <a href="#s-10-1">Hierarchy Management</a>,
+                            below</li>
+                    </ul>
+
+                    <h3 id="s-10-1">Hierarchy Management</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → Admin → Hierarchy Management</p>
+                    <p>Defines the organizational reporting structure that AML operations run on top of — who sits
+                        above whom, and which unit or branch each user and case belongs to. Screening, monitoring,
+                        and case data all inherit this structure, which is what makes role-based routing and
+                        escalation possible elsewhere in the platform.</p>
+                    <ul class="check-list">
+                        <li>Define organizational units (e.g. branch, region, department) and the parent-child
+                            relationships between them</li>
+                        <li>Assign users to a position within the hierarchy, establishing their reporting line and
+                            supervisor</li>
+                        <li>Drive case and alert escalation paths — e.g. an unresolved case escalates automatically to
+                            the assignee's supervisor as defined here</li>
+                        <li>Support segregation-of-duties and maker-checker controls by making reporting relationships
+                            explicit and auditable</li>
+                        <li>Feed dashboard and SLA reporting that needs to be sliced by branch, team, or region</li>
+                    </ul>

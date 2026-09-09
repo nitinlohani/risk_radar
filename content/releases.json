@@ -1,0 +1,74 @@
+[
+    {
+        "version": "v2.9.0",
+        "date": "20 Aug 2026",
+        "tag": "new",
+        "title": "Schedules & Expected Response",
+        "description": "Transaction Monitoring Rules gets a new Schedules screen \u2014 named, reusable run schedules that attach to a rule (Live in) or a draft. AI Manager adds Case Copilot, a shared persona prompt, plus Expected Response \u2014 structured output fields, including enums, that every prompt can now define.",
+        "moduleLink": "#s-7-5b",
+        "moduleLinkText": "Schedules"
+    },
+    {
+        "version": "v2.8.0",
+        "date": "19 Aug 2026",
+        "tag": "improved",
+        "title": "AI Manager",
+        "description": "Agent Configuration and Prompt Configuration are now unified as two tabs \u2014 Prompt Config and Model Config \u2014 under a single AI Manager page, renamed from AI Agent Manager. Model Config adds a Temperature setting and full version history with one-click Restore; Prompt Config now tracks a revision count on every prompt.",
+        "moduleLink": "#ai-manager",
+        "moduleLinkText": "AI Manager"
+    },
+    {
+        "version": "v2.7.0",
+        "date": "16 Aug 2026",
+        "tag": "new",
+        "title": "Agent Configuration & Prompt Configuration",
+        "description": "Registers the AI model identity and the Role/Task/Description prompts behind AI Agent Manager's drafting, as two new configuration screens.",
+        "moduleLink": "#ai-manager",
+        "moduleLinkText": "AI Manager"
+    },
+    {
+        "version": "v2.6.0",
+        "date": "15 Aug 2026",
+        "tag": "new",
+        "title": "Customers",
+        "description": "A full profile for every customer \u2014 KYC detail, linked accounts, and five activity tabs covering analytics, transactions, prior cases, screening, and STR history.",
+        "moduleLink": "#customers",
+        "moduleLinkText": "Customers"
+    },
+    {
+        "version": "v2.5.0",
+        "date": "10 Aug 2026",
+        "tag": "new",
+        "title": "Batch Ingestion",
+        "description": "Scheduled bulk imports for Customers, Accounts, and Transactions, with adjustable run schedules and a downloadable error report per job.",
+        "moduleLink": "#data-ingestion",
+        "moduleLinkText": "Data Ingestion"
+    },
+    {
+        "version": "v2.4.0",
+        "date": "29 Jul 2026",
+        "tag": "new",
+        "title": "AI Agent Manager",
+        "description": "Automated first-pass drafting for alerts and cases, so analyst review time goes toward judgement, not data-gathering.",
+        "moduleLink": "#ai-manager",
+        "moduleLinkText": "AI Manager"
+    },
+    {
+        "version": "v2.3.2",
+        "date": "24 Jul 2026",
+        "tag": "improved",
+        "title": "Screening Configuration",
+        "description": "Weightages for Name, Address, Citizenship, Gender, and Date of Birth are now easier to review at a glance.",
+        "moduleLink": "#name-screening",
+        "moduleLinkText": "Name Screening"
+    },
+    {
+        "version": "v2.3.1",
+        "date": "17 Jul 2026",
+        "tag": "fix",
+        "title": "Alert Manager SLA display",
+        "description": "SLA Breached counts in Admin View now reconcile correctly with individual alert deadlines.",
+        "moduleLink": "#alert-manager",
+        "moduleLinkText": "Alert Manager"
+    }
+]

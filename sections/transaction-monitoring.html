@@ -1,0 +1,353 @@
+<div class="sec-tag">Monitoring & Data</div>
+                    <h2>Transaction Monitoring</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Transaction Monitoring
+                    </p>
+                    <p class="sec-intro">Detects suspicious transaction patterns using configurable typologies (rules)
+                        built from reusable Variables.</p>
+
+                    <p>Before the details below, here's the complete path a transaction takes through the engine,
+                        from the moment it lands in FT AML to a case landing on an investigator's desk:</p>
+                    <figure class="shot-wide" style="cursor:default;">
+                        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;">
+                            <svg viewBox="0 0 1080 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                                <defs>
+                                    <marker id="arrow-tm-overview" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7"
+                                        markerHeight="7" orient="auto-start-reverse">
+                                        <path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)" />
+                                    </marker>
+                                </defs>
+
+                                <rect x="149.0" y="10" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="234.0"
+                                    y="47" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="234.0" dy="0">Transaction Ingested</tspan>
+                                </text>
+                                <line x1="319.0" y1="42" x2="347.0" y2="42" style="stroke:var(--accent);stroke-width:2"
+                                    marker-end="url(#arrow-tm-overview)" />
+
+                                <rect x="353.0" y="10" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="438.0"
+                                    y="47" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="438.0" dy="0">Variables Calculated</tspan>
+                                </text>
+                                <line x1="523.0" y1="42" x2="551.0" y2="42" style="stroke:var(--accent);stroke-width:2"
+                                    marker-end="url(#arrow-tm-overview)" />
+
+                                <rect x="557.0" y="10" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="642.0"
+                                    y="47" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="642.0" dy="0">Aggregations Applied</tspan>
+                                </text>
+                                <line x1="727.0" y1="42" x2="755.0" y2="42" style="stroke:var(--accent);stroke-width:2"
+                                    marker-end="url(#arrow-tm-overview)" />
+
+                                <rect x="761.0" y="10" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="846.0"
+                                    y="47" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="846.0" dy="0">Trigger Conditions Evaluated</tspan>
+                                </text>
+
+                                <path d="M 846.0 74 L 846.0 104 L 336.0 104 L 336.0 114"
+                                    style="stroke:var(--accent);stroke-width:2;fill:none"
+                                    marker-end="url(#arrow-tm-overview)" />
+
+                                <rect x="251.0" y="110" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="336.0"
+                                    y="147" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="336.0" dy="0">Suppression Checked</tspan>
+                                </text>
+                                <line x1="421.0" y1="142" x2="449.0" y2="142" style="stroke:var(--accent);stroke-width:2"
+                                    marker-end="url(#arrow-tm-overview)" />
+
+                                <rect x="455.0" y="110" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="540.0"
+                                    y="147" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="540.0" dy="0">Alerts Generated</tspan>
+                                </text>
+                                <line x1="625.0" y1="142" x2="653.0" y2="142" style="stroke:var(--accent);stroke-width:2"
+                                    marker-end="url(#arrow-tm-overview)" />
+
+                                <rect x="659.0" y="110" width="170" height="64" rx="12"
+                                    style="fill:var(--bg-card);stroke:var(--border);stroke-width:1.5" /><text x="744.0"
+                                    y="147" text-anchor="middle"
+                                    style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--dark);">
+                                    <tspan x="744.0" dy="0">Cases Created</tspan>
+                                </text>
+                            </svg>
+                        </div>
+                        <figcaption>Figure 7.0 — How a transaction becomes a case, end to end</figcaption>
+                    </figure>
+                    <div class="note-box"><span class="box-label">Note</span>"Cases Created" only happens for alerts
+                        an investigator confirms as a True Match in Alert Manager — most alerts resolve as false
+                        positives and close without ever becoming a case. See <a href="#alert-manager">Alert
+                        Manager</a> and <a href="#case-manager">Case Manager</a> for what happens after an alert is
+                        generated.</div>
+
+                    <h3 id="s-7-1">Typology</h3>
+
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Transaction Monitoring → Typology
+                    </p>
+                    <p>Each monitoring rule is defined as a Typology — a named, versioned pattern (e.g. Structuring,
+                        High Value Transfer, Smurfing) built from Variables and Trigger Conditions. The Typology screen
+                        lists every rule with its current status (Draft, Shadow, or Published), the typology category it
+                        belongs to, and when it was created or last updated.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to FT AML → Transaction Monitoring → Typology</li>
+                            <li>Search by rule name or rule ID to locate a specific typology</li>
+                            <li>Review each rule's Status — Draft (in progress), Shadow (running silently for
+                                validation), or Published (live and generating alerts)</li>
+                            <li>Click + New Draft to start building a new rule, opening the Create Typology screen —
+                                Typology Name, optional Typology Type, and a Description, followed by one or more
+                                condition Groups (combined with AND/OR) that define when the rule fires</li>
+                            <li>Use the Actions menu to edit, duplicate, or change the status of an existing rule</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-038.png" width="1918" height="871"
+                            alt="Figure 7.1 — Transaction Monitoring Typologies" loading="lazy">
+                        <figcaption>Figure 7.1 — Transaction Monitoring Typologies</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-039.png" width="1918" height="871"
+                            alt="Figure 7.2 — Create Typology" loading="lazy">
+                        <figcaption>Figure 7.2 — Create Typology</figcaption>
+                    </figure>
+                    <h3 id="s-7-2">Variables</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Transaction Monitoring → Variables
+                    </p>
+                    <p>Variables are named calculations reused across rules — e.g. Count, Sum, Avg, Max, Min, Distinct
+                        Count. The Variables module lets users view available variables, search for a specific variable,
+                        sort them, and create new ones as required.</p>
+                    <ul class="check-list">
+                        <li>Count(sender_entity_id) · Sum(amount) · Avg(amount)</li>
+                        <li>Distinct Count(sender_entity_id) · Max(amount) · Min(amount)</li>
+                    </ul>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to FT AML → Transaction Monitoring → Variables</li>
+                            <li>Use the Search bar to quickly locate a variable by name</li>
+                            <li>Use the Sort By dropdown to arrange variables by Updated, Created, or Name</li>
+                            <li>Review each variable's Variable ID, Created Date, and Last Updated Date</li>
+                            <li>Click + New Variable to create a new variable for use in monitoring rules, opening the
+                                Create Variables screen</li>
+                            <li>Choose an existing variable or start a new one; for a new variable, pick Transaction or
+                                Entity, give it a Variable name and optional Description, then set its Aggregation
+                                (Field and Function, e.g. Sum of amount)</li>
+                            <li>Set the Time Window (Look Back and End At, relative to the trigger time), and optionally
+                                add Filters on specific fields, before clicking Save Variable</li>
+                        </ul>
+                    </div>
+                    <p>Building variables instead of repeating logic in every rule gives four benefits:
+                        <strong>Reusability</strong> (one calculation, many rules), <strong>Performance</strong>
+                        (compute once, reuse), <strong>Readability</strong> (a named variable reads better than the raw
+                        logic it represents), and <strong>Maintainability</strong> (change the definition once and every
+                        rule using it updates automatically).</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-040.png" width="1918" height="870"
+                            alt="Figure 7.3 — Variables" loading="lazy">
+                        <figcaption>Figure 7.3 — Variables</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-041.png" width="1918" height="873"
+                            alt="Figure 7.4 — Create Variable" loading="lazy">
+                        <figcaption>Figure 7.4 — Create Variable: naming the variable, choosing Transaction or Entity, and setting the Aggregation field and function.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-042.png" width="1918" height="867"
+                            alt="Figure 7.5 — Create Variable, Time Window & Filters" loading="lazy">
+                        <figcaption>Figure 7.5 — Create Variable, Time Window & Filters: setting the Look back/End at window and optional filters.</figcaption>
+                    </figure>
+                    <h3 id="s-7-3">Group By, Look Back &amp; End At</h3>
+                    <ul class="check-list">
+                        <li>Group By calculates separately per value — e.g. per sender_entity_id</li>
+                        <li>Look Back defines how far back analysis starts; End At defines where it stops</li>
+                        <li>Example: Look Back = 10 Days, End At = 0 Days → analyses the last 10 days</li>
+                    </ul>
+                    <h3 id="s-7-4">Trigger Conditions</h3>
+                    <p>Trigger conditions decide when alerts are created — e.g.
+                        <code>count_sender_txns_1_week &gt; 5</code>, <code>amount &gt; 10000</code>,
+                        <code>country = 'High Risk'</code>. AND requires all conditions to be true; OR requires any one
+                        condition to be true. Values can be a Static Value (fixed threshold), a Variable (calculated),
+                        or Ingested Data (a raw transaction field).</p>
+                    <p>A Variable calculates a value; a Trigger Condition checks that value and decides whether to raise
+                        an alert. A variable on its own is just information — the trigger condition is what tells the
+                        system that information is suspicious.</p>
+                    <h3 id="s-7-5">Suppression, Execution Interval &amp; Dry Run</h3>
+                    <ul class="check-list">
+                        <li>Suppression Window prevents duplicate alerts for the same entity within a set period (e.g. 1
+                            hour)</li>
+                        <li>Execution Interval defines how often a rule runs: Hourly, Daily, Weekly, Monthly</li>
+                        <li>Dry Run simulates historical execution without creating production alerts — used to validate
+                            records scanned, alerts created, and matching entities before a rule goes live</li>
+                    </ul>
+
+                    <h3 id="s-7-5b">Schedules</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Transaction Monitoring Rules →
+                        Schedules</p>
+                    <p>Turns Execution Interval into a proper, reusable, named object instead of a setting buried
+                        inside one rule. A Schedule has its own <strong>Name</strong>, a numeric <strong>Execution
+                        Interval</strong> (e.g. 1 Week, 6 Hours), a <strong>Start Time</strong>, and an optional
+                        <strong>End Time</strong> — and it can be attached to a published rule or referenced by a
+                        rule still in draft, so the same schedule definition doesn't have to be rebuilt each time.</p>
+                    <p>The list shows every schedule that's ever been created, alongside:</p>
+                    <ul class="check-list">
+                        <li><strong>Last Executed</strong> — when the schedule last actually ran, or "—" if it never
+                            has</li>
+                        <li><strong>Rules Linked</strong> — how many rules, published or still in draft, currently
+                            reference this schedule; the same schedule can drive more than one rule at once</li>
+                        <li><strong>Status</strong> — Active, Inactive, or Completed (e.g. a one-time run past its
+                            Start Time)</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-095.png" width="1918" height="871"
+                            alt="Schedules list showing Last Executed, Rules Linked, and Status columns, with Sort By open" loading="lazy">
+                        <figcaption>Figure TM.1 — The Schedules list: Rules Linked shows how many rules share the same schedule.</figcaption>
+                    </figure>
+                    <p>Clicking into a schedule opens its detail view, showing exactly where it's being used:</p>
+                    <ul class="check-list">
+                        <li><strong>Live in</strong> — the published rule this schedule currently drives, shown as a
+                            direct link back to that rule</li>
+                        <li><strong>Used in</strong> — any draft rule referencing this schedule, so a schedule can be
+                            prepared before the rule it belongs to goes live</li>
+                    </ul>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-091.png" width="1918" height="877"
+                            alt="Schedules list with a View Run everyday modal open, showing Live in" loading="lazy">
+                        <figcaption>Figure TM.2 — A schedule's detail view: its interval, and the rule it's Live in.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to Transaction Monitoring Rules → Schedules</li>
+                            <li>Search by Schedule Name, or use Sort By (All, Last executed, Created At) and
+                                Hide/Show Filters to narrow a long list</li>
+                            <li>Check Rules Linked to see, at a glance, whether a schedule is shared across more than
+                                one rule before changing it</li>
+                            <li>Click a row to view its Name, Execution Interval, Start Time, End Time, and which
+                                rule it's Live in</li>
+                            <li>Click <strong>Edit</strong> within that view to change the interval or timing</li>
+                            <li>Check the Status column (Active, Inactive, Completed) to see whether a schedule is
+                                currently running, has never been attached to a live rule, or has finished</li>
+                        </ul>
+                    </div>
+                    <div class="note-box"><span class="box-label">Note</span>A schedule can exist without being Live
+                        in anything yet — creating it and attaching it to a rule are two separate steps, which is what
+                        makes it possible to prepare a schedule ahead of publishing the rule that will use it. Because
+                        a schedule can also be linked to more than one rule, editing its interval or timing changes it
+                        for every rule that shares it.</div>
+
+                    <h3 id="s-7-6">Worked Example</h3>
+                    <p>Example variable: <code>count_sender_txns_1_week</code> — the count of transactions made by each
+                        sender in the last 7 days. The engine calculates it once per sender, and every rule can reuse
+                        it:</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sender</th>
+                                    <th>Transactions in Last Week</th>
+                                    <th>Variable Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>5</td>
+                                    <td>count_sender_txns_1_week = 5</td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td>1</td>
+                                    <td>count_sender_txns_1_week = 1</td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td>3</td>
+                                    <td>count_sender_txns_1_week = 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Real example — today is 10 Jul 2026. Sender A's transactions:</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>09 Jul</td>
+                                    <td>₹1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Jul</td>
+                                    <td>₹2,000</td>
+                                </tr>
+                                <tr>
+                                    <td>05 Jul</td>
+                                    <td>₹5,000</td>
+                                </tr>
+                                <tr>
+                                    <td>29 Jun</td>
+                                    <td>₹8,000</td>
+                                </tr>
+                                <tr>
+                                    <td>20 Jun</td>
+                                    <td>₹4,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="check-list">
+                        <li>count_sender_txns_1_week (03–10 Jul) = 3</li>
+                        <li>count_sender_txns_2_weeks (26 Jun–10 Jul) = 4</li>
+                        <li>Rule: count_sender_txns_1_week &gt; 1 OR count_sender_txns_2_weeks &gt; 1</li>
+                        <li>Eval: 3 &gt; 1 → TRUE OR 4 &gt; 1 → TRUE ⇒ Alert Generated</li>
+                    </ul>
+                    <h3 id="s-7-7">More Trigger Condition Patterns</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pattern</th>
+                                    <th>Variable</th>
+                                    <th>Trigger Condition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Amount-based</td>
+                                    <td>total_amount_1_day</td>
+                                    <td>total_amount_1_day &gt; 100000</td>
+                                </tr>
+                                <tr>
+                                    <td>Count-based</td>
+                                    <td>count_sender_txns_24_hours</td>
+                                    <td>count_sender_txns_24_hours &gt; 10</td>
+                                </tr>
+                                <tr>
+                                    <td>Country-based</td>
+                                    <td>—</td>
+                                    <td>country = 'High Risk'</td>
+                                </tr>
+                                <tr>
+                                    <td>Combined (AND)</td>
+                                    <td>amount, country, count_sender_txns_1_day</td>
+                                    <td>amount &gt; 50000 AND country = 'High Risk' AND count_sender_txns_1_day &gt; 3
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>

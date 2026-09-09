@@ -1,0 +1,91 @@
+<div class="sec-tag">AI & Screening</div>
+                    <h2>Automation</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Automation</p>
+                    <p class="sec-intro">Configures how alerts from <a href="#name-screening">Name Screening</a> and
+                        <a href="#transaction-monitoring">Transaction Monitoring</a> automatically become cases in
+                        <a href="#case-manager">Case Manager</a> — instead of each alert needing to be manually
+                        opened into its own case. Automation currently has one configurable area — Case
+                        Creation — which controls which alert types are eligible, and how related alerts get grouped
+                        together into a single case.</p>
+
+                    <h3 id="s-au-1">Case Creation — Active Configuration</h3>
+                    <p>Every institution has exactly one <strong>active</strong> Case Creation configuration at a
+                        time, shown read-only here until Edit is used. It has two parts: which <strong>Alert
+                        Types</strong> are allowed to trigger automatic case creation at all, and the <strong>Alert
+                        Type Grouping</strong> rules that decide when several alerts should merge into one case
+                        instead of each opening a separate one.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-085.png" width="1918" height="874"
+                            alt="Figure AU.1 — Case Creation, Active Configuration, with Edit highlighted" loading="lazy">
+                        <figcaption>Figure AU.1 — Case Creation's active configuration: Alert Types and Alert Type Grouping.</figcaption>
+                    </figure>
+                    <p>Within <strong>Alert Type Grouping</strong>, each <strong>Group</strong> lists the Alert Types
+                        it applies to (here, Name Screening and Transaction Monitoring together, tagged "2 Sources"),
+                        a <strong>Case age</strong> in days, and a set of <strong>Case Status</strong> values. Read
+                        together, a group says: alerts from these sources, on the same customer, land in the same
+                        case as long as that case is still within the Case age window and currently sitting in one
+                        of the listed statuses — otherwise a new case is opened instead of merging into an old
+                        one.</p>
+
+                    <h3 id="s-au-2">Editing the configuration</h3>
+                    <p>Clicking Edit turns every field in the Active Configuration interactive: Alert Types become
+                        checkboxes you can toggle, and each group's Alert Types, Case age, and Case Status become
+                        editable directly in place.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Navigate to Automation → Case Creation from the FT AML menu</li>
+                            <li>Click <strong>Edit</strong> in the top right to unlock the configuration</li>
+                            <li>Under Alert Types, check or uncheck which sources (Name Screening, Transaction
+                                Monitoring) can trigger automatic case creation</li>
+                            <li>Within a group, add or remove Alert Types from the Select alert type dropdown</li>
+                            <li>Set <strong>Case age</strong> — the merge window in days: alerts on the same customer
+                                arriving within this many days of an existing case join that case instead of opening
+                                a new one</li>
+                            <li>Set <strong>Case Status</strong> — which case statuses remain open to merging (e.g. a
+                                case that's already Reopened or Escalated can still absorb new alerts; one that's
+                                Closed typically shouldn't)</li>
+                            <li>Use <strong>+ Add Group</strong> to create additional groupings with their own rules,
+                                if different alert-type combinations need different merge behavior</li>
+                            <li>Click <strong>Save</strong> to apply the changes, or Cancel to discard them</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-086.png" width="1918" height="873"
+                            alt="Figure AU.2 — Case Creation in edit mode, with Case age highlighted" loading="lazy">
+                        <figcaption>Figure AU.2 — Editing Case Creation: Case age sets the merge window in days.</figcaption>
+                    </figure>
+                    <div class="note-box"><span class="box-label">Note</span>Saving a change here doesn't retroactively
+                        re-group cases that already exist — it only changes how future alerts are evaluated for
+                        merging from that point on.</div>
+
+                    <h3 id="s-au-3">Configuration History</h3>
+                    <p>Every save creates a new version rather than overwriting the last one, so the full history of
+                        how case-creation rules have changed over time is always available for audit. Configuration
+                        History lists every version — its unique Config Version ID, whether it's the currently
+                        ACTIVE one or an INACTIVE past version, when it was created, and by whom.</p>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Click <strong>Configuration History</strong> at the top of Case Creation</li>
+                            <li>Scan the Status column for which version is currently ACTIVE</li>
+                            <li>Click any row to open that version's full read-only configuration in a Details
+                                panel, exactly as it was saved</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-087.png" width="1918" height="871"
+                            alt="Figure AU.3 — Configuration History list, with the ACTIVE badge highlighted" loading="lazy">
+                        <figcaption>Figure AU.3 — Configuration History: every past version, with ACTIVE marking the one in effect.</figcaption>
+                    </figure>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-088.png" width="1918" height="868"
+                            alt="Figure AU.4 — Configuration Details modal opened from a history row" loading="lazy">
+                        <figcaption>Figure AU.4 — Opening a row from history: the complete configuration exactly as it was saved.</figcaption>
+                    </figure>
+                    <div class="callout"><span class="callout-tag">Example</span>
+                        <p>A customer triggers a Name Screening alert on Monday and a Transaction Monitoring alert on
+                            Wednesday. With both Alert Types in the same group, a Case age of 152 days, and Open
+                            included in Case Status, the Wednesday alert joins Monday's still-open case automatically
+                            instead of creating a second, disconnected case for the same customer.</p>
+                    </div>

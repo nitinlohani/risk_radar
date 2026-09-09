@@ -1,0 +1,120 @@
+<div class="sec-tag">Monitoring & Data</div>
+                    <h2>Data Ingestion</h2>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Data Ingestion</p>
+                    <p class="sec-intro">Imports watchlist and transaction data feeding screening and monitoring.</p>
+                                        <h3 id="s-8-0">Batch Ingestion</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Data Ingestion → Batch Ingestion</p>
+                    <p>Runs scheduled bulk imports of core reference data — Customers, Accounts, and Transactions —
+                        keeping the rest of the platform populated with current records. Each file type runs as its
+                        own job on a shared schedule, and this screen is where you monitor completion, adjust timing,
+                        and dig into exactly what happened on any individual run. Recurring-job scheduling for batch
+                        processes across the platform, including <a href="#name-screening">Name Screening → Batch
+                        Screening</a>, is configured from here — Batch Screening itself now shows only the read-only
+                        history of past screening runs.</p>
+                    <div class="howto">
+                        <h4>Key features</h4>
+                        <ul class="check-list">
+                            <li>View the current schedule (frequency and run times) and when the job last/next runs</li>
+                            <li>Monitor Total, Processing, Completed, and Failed job counts at a glance</li>
+                            <li>Search and filter the job history by Job ID</li>
+                            <li>Review Total Records, Ingested, Skipped Rows, and Start/End Time for every job</li>
+                            <li>Adjust the ingestion schedule without needing engineering support</li>
+                            <li>Open any job to see its full detail, including a downloadable error report</li>
+                        </ul>
+                    </div>
+                    <p>The status bar across the top always shows the <strong>current schedule</strong> in one line —
+                        useful for confirming what's actually configured without opening a settings screen. A job
+                        marked <strong>Inactive</strong> is paused rather than failing; <strong>Resume</strong>
+                        restarts it on that same schedule.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-067.png" alt="Batch Ingestion main screen with job list and Change Schedule button"
+                            loading="lazy" width="1918" height="867">
+                        <figcaption>Figure 8.1 — The Batch Ingestion overview: current schedule, job counts, and the
+                            full run history for Accounts, Transactions, and Customers.</figcaption>
+                    </figure>
+                    <p>Clicking <strong>Change Schedule</strong> opens a two-step dialog. The first step sets the new
+                        frequency and up to 3 run times per day, with a live preview of when the change will actually
+                        take effect.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-068.png" alt="Change Ingestion Schedule dialog, step 1: frequency and runtimes"
+                            loading="lazy" width="1918" height="877">
+                        <figcaption>Figure 8.2 — Setting a new frequency and runtimes, with a Next Run Preview
+                            confirming exactly when it applies.</figcaption>
+                    </figure>
+                    <p>The second step is a plain-text summary of the same change, specifically for review before
+                        anything is committed — nothing here is editable, it's a final check.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-069.png" alt="Change Ingestion Schedule dialog, step 2: review before confirming"
+                            loading="lazy" width="1918" height="873">
+                        <figcaption>Figure 8.3 — Reviewing the new schedule. If a job is currently running, the
+                            change is queued and applied once it finishes.</figcaption>
+                    </figure>
+                    <div class="howto">
+                        <h4>How to use</h4>
+                        <ul class="check-list">
+                            <li>Click <strong>Change Schedule</strong>, set the new frequency and up to 3 runtimes</li>
+                            <li>Click <strong>Review Changes</strong> to see a final, read-only summary</li>
+                            <li>Click <strong>Confirm</strong> to save — the change takes effect from the next
+                                scheduled run, not immediately</li>
+                        </ul>
+                    </div>
+                    <p>Clicking any row in the job list opens its full detail — total records, how many were
+                        successfully ingested versus skipped, exact start/completion timestamps, and the source file
+                        path. Every job's errors can be downloaded as a CSV, so a skipped-row count is never a dead
+                        end — you can see precisely which rows failed and why.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-070.png" alt="Batch Ingestion Details panel with Download Errors CSV"
+                            loading="lazy" width="1918" height="874">
+                        <figcaption>Figure 8.4 — Job detail for a single run, with source and error CSVs both
+                            downloadable.</figcaption>
+                    </figure>
+<h3 id="s-8-1">Watchlist Ingestion</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Data Ingestion → Watchlist</p>
+                    <p>Provides a complete history of watchlist files ingested into the system, so users can monitor the
+                        status of each ingestion process, verify successful uploads, and review ingestion type, source,
+                        processing time, and records processed — helping ensure the latest watchlist data is available
+                        for customer screening.</p>
+                    <div class="howto">
+                        <h4>Key features</h4>
+                        <ul class="check-list">
+                            <li>View the complete watchlist ingestion history</li>
+                            <li>Search for ingestion records using the filename</li>
+                            <li>Filter records by Ingestion Type (e.g. Delta, Delete) and Status</li>
+                            <li>Monitor the processing status of each ingestion job</li>
+                            <li>Review File Name, Ingestion Type, Source, Status, Start Time, End Time, Total Rows
+                                Processed, and Error Messages (if any)</li>
+                            <li>Refresh the page to view the latest ingestion history</li>
+                        </ul>
+                    </div>
+                    <p><strong>Ingestion Type</strong> tells you what kind of update was applied: <strong>Delta</strong>
+                        files add or update watchlist records (the bulk of daily traffic — often thousands of rows),
+                        while <strong>Delete</strong> files remove records the provider has withdrawn. Both run
+                        automatically on a schedule from the source provider (LSEG), and this screen is where you
+                        confirm each one actually completed rather than silently failing overnight.</p>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-043.png" width="1918" height="874"
+                            alt="Figure 8.5 — Watchlist Ingestion" loading="lazy">
+                        <figcaption>Figure 8.5 — Watchlist Ingestion</figcaption>
+                    </figure>
+                    <h3 id="s-8-2">TMS Ingestion</h3>
+                    <p class="nav-crumb"><span>Navigation</span> Homepage → FT AML → Data Ingestion → TMS</p>
+                    <p>Provides an overview of all files ingested into the transaction monitoring system, so users can
+                        track ingestion jobs, monitor processing status, and verify that transaction, entity, and
+                        instrument data have been imported successfully — giving visibility into data ingestion health
+                        to ensure accurate transaction monitoring.</p>
+                    <div class="howto">
+                        <h4>Key features</h4>
+                        <ul class="check-list">
+                            <li>View the status of all TMS data ingestion jobs</li>
+                            <li>Monitor summary statistics: Total, Processing, Completed, and Failed jobs</li>
+                            <li>Filter records by File Type and Status</li>
+                            <li>Review Job ID, File Type, Status, Total Records, Records Ingested, Start Time (UTC), and
+                                Processing Duration for each job</li>
+                            <li>Refresh the page to display the latest ingestion status</li>
+                        </ul>
+                    </div>
+                    <figure class="shot-wide">
+                        <img src="images/screenshot-044.png" width="1918" height="871"
+                            alt="Figure 8.6 — TMS Ingestion dashboard job detail" loading="lazy">
+                        <figcaption>Figure 8.6 — TMS Ingestion dashboard job detail</figcaption>
+                    </figure>
